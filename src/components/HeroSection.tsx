@@ -1,10 +1,12 @@
 
 import { Button } from '@/components/ui/button';
+import HeroBackgroundSlider from './HeroBackgroundSlider';
 
 const HeroSection = () => {
   return (
-    <section id="home" className="hero-bg min-h-[100vh] flex items-center justify-center text-white">
-      <div className="container mx-auto px-4 md:px-6 text-center">
+    <section id="home" className="relative min-h-[100vh] flex items-center justify-center text-white overflow-hidden">
+      <HeroBackgroundSlider />
+      <div className="container mx-auto px-4 md:px-6 text-center z-10">
         <div className="max-w-3xl mx-auto animate-fade-in">
           <h1 className="text-4xl md:text-6xl font-bold font-heading mb-4">
             Empowering Nepal through Innovative IT Solutions
