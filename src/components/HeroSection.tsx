@@ -25,9 +25,10 @@ const HeroSection = () => {
   };
 
   return (
-    <section id="home" className="relative min-h-[100vh] flex items-center justify-center text-white overflow-hidden">
+    <section id="home" className="relative min-h-screen flex items-center justify-center text-white overflow-hidden">
       <HeroBackgroundSlider />
-      <div className="container mx-auto px-4 md:px-6 text-center z-10">
+      
+      <div className="container mx-auto px-4 md:px-6 text-center z-10 relative">
         <motion.div 
           className="max-w-3xl mx-auto"
           initial="hidden"
@@ -35,17 +36,19 @@ const HeroSection = () => {
           variants={containerVariants}
         >
           <motion.h1 
-            className="text-4xl md:text-6xl font-bold font-heading mb-6 leading-tight"
+            className="text-4xl md:text-6xl font-bold font-heading mb-6 leading-tight text-white drop-shadow-lg"
             variants={itemVariants}
           >
             Empowering Nepal through Innovative IT Solutions
           </motion.h1>
+          
           <motion.p 
-            className="text-lg md:text-xl mb-10 max-w-2xl mx-auto"
+            className="text-lg md:text-xl mb-10 max-w-2xl mx-auto text-white drop-shadow-md"
             variants={itemVariants}
           >
             We provide cutting-edge technologies and training to help businesses thrive in the digital era.
           </motion.p>
+          
           <motion.div 
             className="flex flex-wrap gap-4 justify-center"
             variants={itemVariants}
@@ -57,6 +60,7 @@ const HeroSection = () => {
             >
               <a href="#services">Explore Our Services</a>
             </Button>
+            
             <Button
               variant="outline"
               size="lg"
