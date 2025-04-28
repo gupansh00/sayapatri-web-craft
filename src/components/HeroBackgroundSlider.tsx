@@ -7,11 +7,14 @@ import {
 import { useEffect } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
+import { motion } from "framer-motion";
 
+// Use placeholder images from Unsplash that will be replaced later
 const images = [
-  "/hero-background.jpg",
-  "/hero-background-2.jpg",
-  "/hero-background-3.jpg",
+  "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=1920&q=80", // Laptop computer
+  "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=1920&q=80", // Code on monitor
+  "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1920&q=80", // Person using laptop
+  "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&w=1920&q=80", // People around screens
 ];
 
 const HeroBackgroundSlider = () => {
@@ -38,8 +41,12 @@ const HeroBackgroundSlider = () => {
         <CarouselContent className="h-full">
           {images.map((image, index) => (
             <CarouselItem key={index} className="h-full">
-              <div
-                className="w-full h-full bg-cover bg-center transition-all duration-1000 ease-in-out"
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 1 }}
+                className="w-full h-full bg-cover bg-center"
                 style={{
                   backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)), url(${image})`,
                 }}
