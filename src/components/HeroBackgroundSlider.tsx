@@ -15,9 +15,10 @@ const images = [
 ];
 
 const HeroBackgroundSlider = () => {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [
-    Autoplay({ delay: 5000, stopOnInteraction: false }),
-  ]);
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    { loop: true, dragFree: true },
+    [Autoplay({ delay: 5000, stopOnInteraction: false })]
+  );
 
   useEffect(() => {
     if (emblaApi) {
@@ -26,7 +27,7 @@ const HeroBackgroundSlider = () => {
   }, [emblaApi]);
 
   return (
-    <div className="absolute inset-0 -z-10">
+    <div className="absolute inset-0 -z-10 overflow-hidden">
       <Carousel
         ref={emblaRef}
         className="w-full h-full"
@@ -38,9 +39,9 @@ const HeroBackgroundSlider = () => {
           {images.map((image, index) => (
             <CarouselItem key={index} className="h-full">
               <div
-                className="w-full h-full bg-cover bg-center transition-opacity duration-500"
+                className="w-full h-full bg-cover bg-center transition-all duration-1000 ease-in-out"
                 style={{
-                  backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${image})`,
+                  backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)), url(${image})`,
                 }}
               />
             </CarouselItem>
