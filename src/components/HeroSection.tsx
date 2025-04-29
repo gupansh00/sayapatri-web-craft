@@ -1,6 +1,8 @@
+
 import { Button } from "@/components/ui/button";
 import HeroBackgroundSlider from "./HeroBackgroundSlider";
 import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 
 const HeroSection = () => {
   const containerVariants = {
@@ -58,10 +60,10 @@ const HeroSection = () => {
           >
             <Button
               size="lg"
-              className="bg-sayapatri-500 hover:bg-sayapatri-600 text-white transition-all duration-300 transform hover:scale-105 shadow-md"
+              className="bg-sayapatri-500 hover:bg-sayapatri-600 text-white transition-all duration-300 transform hover:scale-105 shadow-md flex items-center gap-2"
               asChild
             >
-              <a href="#services">Explore Our Services</a>
+              <a href="#services">Explore Our Services <ArrowRight className="h-4 w-4" /></a>
             </Button>
 
             <Button

@@ -1,3 +1,4 @@
+
 import HeroSection from "@/components/HeroSection";
 import Navbar from "@/components/Navbar";
 import AboutSection from "@/components/AboutSection";
@@ -48,16 +49,6 @@ const Index = () => {
       >
         <ServicesSection />
       </motion.div>
-
-      {/* <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
-        variants={sectionVariants}
-        className="shadow-sm"
-      >
-        <ProjectsSection />
-      </motion.div> */}
 
       <motion.div
         initial="hidden"
