@@ -1,4 +1,3 @@
-
 import HeroSection from "@/components/HeroSection";
 import Navbar from "@/components/Navbar";
 import AboutSection from "@/components/AboutSection";
@@ -14,14 +13,14 @@ import { motion } from "framer-motion";
 // Animation variants for scroll reveal effect
 const sectionVariants = {
   hidden: { opacity: 0, y: 50 },
-  visible: { 
-    opacity: 1, 
+  visible: {
+    opacity: 1,
     y: 0,
     transition: {
       duration: 0.8,
-      ease: "easeOut"
-    }
-  }
+      ease: "easeOut",
+    },
+  },
 };
 
 const Index = () => {
@@ -29,7 +28,7 @@ const Index = () => {
     <div className="min-h-screen">
       <Navbar />
       <HeroSection />
-      
+
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -39,7 +38,7 @@ const Index = () => {
       >
         <AboutSection />
       </motion.div>
-      
+
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -49,8 +48,8 @@ const Index = () => {
       >
         <ServicesSection />
       </motion.div>
-      
-      <motion.div
+
+      {/* <motion.div
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
@@ -58,8 +57,8 @@ const Index = () => {
         className="shadow-sm"
       >
         <ProjectsSection />
-      </motion.div>
-      
+      </motion.div> */}
+
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -69,7 +68,7 @@ const Index = () => {
       >
         <EventsSection />
       </motion.div>
-      
+
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -79,7 +78,7 @@ const Index = () => {
       >
         <GallerySection />
       </motion.div>
-      
+
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -89,7 +88,7 @@ const Index = () => {
       >
         <TestimonialsSection />
       </motion.div>
-      
+
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -99,7 +98,7 @@ const Index = () => {
       >
         <ContactSection />
       </motion.div>
-      
+
       <Footer />
     </div>
   );

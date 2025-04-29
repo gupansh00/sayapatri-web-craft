@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import {
   Carousel,
@@ -13,13 +12,33 @@ import { motion } from "framer-motion";
 // Use Unsplash images that will be replaced later
 const images = [
   "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=1920&q=80",
-  "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=1920&q=80", 
+  "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=1920&q=80",
   "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1920&q=80",
   "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&w=1920&q=80",
 ];
 
 const HeroBackgroundSlider = () => {
   const [api, setApi] = React.useState<any>();
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const handleIndicatorClick = (index: number) => {
+    if (api) {
+      api.scrollTo(index);
+      setCurrentIndex(index);
+    }
+  };
+
+  const handlePrevious = () => {
+    if (api) {
+      api.scrollPrev();
+    }
+  };
+
+  const handleNext = () => {
+    if (api) {
+      api.scrollNext();
+    }
+  };
 
   // Auto-advance with 5 second interval
   const autoplayPlugin = React.useRef(
@@ -64,8 +83,14 @@ const HeroBackgroundSlider = () => {
           ))}
         </CarouselContent>
         <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
-          <CarouselPrevious className="absolute -left-12 bg-white/30 hover:bg-white/50 text-white border-none" />
-          <CarouselNext className="absolute -right-12 bg-white/30 hover:bg-white/50 text-white border-none" />
+          <CarouselPrevious
+            onClick={handlePrevious}
+            className="absolute -left-12 bg-white/30 hover:bg-white/50 text-white border-none"
+          />
+          <CarouselNext
+            onClick={handleNext}
+            className="absolute -right-12 bg-white/30 hover:bg-white/50 text-white border-none"
+          />
         </div>
       </Carousel>
     </div>
