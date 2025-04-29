@@ -102,12 +102,12 @@ const HeroBackgroundSlider = () => {
         </div>
 
         <CarouselPrevious 
-          className="absolute left-4 md:left-8 bg-black/30 hover:bg-black/50 text-white border-none z-20" 
+          className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white border-none z-20" 
           aria-label="Previous slide"
         />
         
         <CarouselNext 
-          className="absolute right-4 md:right-8 bg-black/30 hover:bg-black/50 text-white border-none z-20" 
+          className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white border-none z-20" 
           aria-label="Next slide"
         />
       </Carousel>
