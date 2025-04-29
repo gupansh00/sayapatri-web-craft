@@ -7,31 +7,37 @@ const GallerySection = () => {
   const [selectedImage, setSelectedImage] = useState("");
 
   const images = {
-    office: [
-      "/placeholder.svg",
-      "/placeholder.svg",
-      "/placeholder.svg",
-      "/placeholder.svg",
-      "/placeholder.svg",
-      "/placeholder.svg",
-      "/placeholder.svg",
-    ],
+    // office: [
+    //   "/placeholder.svg",
+    //   "/placeholder.svg",
+    //   "/placeholder.svg",
+    //   "/placeholder.svg",
+    //   "/placeholder.svg",
+    //   "/placeholder.svg",
+    //   "/placeholder.svg",
+    // ],
     events: [
-      "/placeholder.svg",
-      "/placeholder.svg",
-      "/placeholder.svg",
-      "/placeholder.svg",
-      "/placeholder.svg",
-      "/placeholder.svg",
+      "https://res.cloudinary.com/dfgbiud18/image/upload/v1745944166/1745934693271_xanbhb.jpg",
+      "https://res.cloudinary.com/dfgbiud18/image/upload/v1745948475/1745944087498_qjkdau.jpg",
+      "https://res.cloudinary.com/dfgbiud18/image/upload/v1745948478/1745944087556_elhwaw.jpg",
+      "https://res.cloudinary.com/dfgbiud18/image/upload/v1745948484/1745944087570_ir4a2u.jpg",
+      "https://res.cloudinary.com/dfgbiud18/image/upload/v1745944165/1745934693218_aqymur.jpg",
+      "https://res.cloudinary.com/dfgbiud18/image/upload/v1745948476/1745944087585_iyoyqm.jpg",
+      "https://res.cloudinary.com/dfgbiud18/image/upload/v1745948477/1745944087522_m1oz98.jpg",
+      "https://res.cloudinary.com/dfgbiud18/image/upload/v1745949488/487098759_1151661726971406_5286530456418803876_n_jtbzya.jpg",
+      "https://res.cloudinary.com/dfgbiud18/image/upload/v1745949487/487442715_1151659400304972_2649421218059992094_n_vgta6k.jpg",
+
+      "https://res.cloudinary.com/dfgbiud18/image/upload/v1745949487/487312882_1151659356971643_8069178518043272483_n_ywgx8j.jpg",
+      "https://res.cloudinary.com/dfgbiud18/image/upload/v1745949487/486961802_1151659396971639_6782054894004284888_n_mjilox.jpg",
     ],
-    team: [
-      "/placeholder.svg",
-      "/placeholder.svg",
-      "/placeholder.svg",
-      "/placeholder.svg",
-      "/placeholder.svg",
-      "/placeholder.svg",
-    ],
+    // team: [
+    //   "/placeholder.svg",
+    //   "/placeholder.svg",
+    //   "/placeholder.svg",
+    //   "/placeholder.svg",
+    //   "/placeholder.svg",
+    //   "/placeholder.svg",
+    // ],
   };
 
   const openLightbox = (imageSrc: string) => {
@@ -47,17 +53,16 @@ const GallerySection = () => {
             Our Gallery
           </h2>
           <p className="max-w-2xl mx-auto text-gray-700">
-            Take a visual journey through our office, events, and team
-            activities.
+            Take a visual journey through our events.
           </p>
         </div>
 
-        <Tabs defaultValue="office" className="mx-auto max-w-4xl">
-          <TabsList className="grid grid-cols-3 mb-8">
+        <Tabs defaultValue="events" className="mx-auto max-w-4xl">
+          {/* <TabsList className="grid grid-cols-3 mb-8">
             <TabsTrigger value="office">Our Office</TabsTrigger>
             <TabsTrigger value="events">Events</TabsTrigger>
             <TabsTrigger value="team">Our Team</TabsTrigger>
-          </TabsList>
+          </TabsList> */}
 
           {Object.entries(images).map(([category, imgs]) => (
             <TabsContent key={category} value={category} className="mt-0">
