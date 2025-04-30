@@ -31,7 +31,12 @@ const Footer = () => {
     },
     // { name: "Twitter", icon: <Twitter size={20} />, href: "#" },
     // { name: "Instagram", icon: <Instagram size={20} />, href: "#" },
-    { name: "LinkedIn", icon: <Linkedin size={20} />, href: "#" },
+    {
+      name: "LinkedIn",
+      icon: <Linkedin size={20} />,
+      href: "https://www.linkedin.com/company/107067819/admin/dashboard/",
+      target: "blank",
+    },
   ];
 
   return (
