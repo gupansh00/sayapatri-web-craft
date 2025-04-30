@@ -67,24 +67,40 @@ const ContactSection = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
+    const response = await fetch(
+      "https://sayapatri-90bf0-default-rtdb.asia-southeast1.firebasedatabase.app/contact.json",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      }
+    );
+    if (!response.ok) {
       toast({
-        title: "Message Sent!",
-        description: "We'll get back to you as soon as possible.",
+        title: "Error",
+        description: "There was an error sending your message.",
+        variant: "destructive",
       });
-      setFormData({
-        name: "",
-        email: "",
-        subject: "",
-        message: "",
-      });
-      setIsSubmitting(false);
-    }, 1000);
+    }
+    setFormData({
+      name: "",
+      email: "",
+      subject: "",
+      message: "",
+    });
+    toast({
+      title: "Success",
+      description: "Your message has been sent successfully.",
+      variant: "default",
+    });
+
+    setIsSubmitting(false);
   };
 
   return (

@@ -13,6 +13,7 @@ const TestimonialsSection = () => {
     {
       name: "Shiva Adhikari",
       position: "Principal, Namuna Vidya Mandir",
+      location: "Biratnagar, Nepal",
       content:
         "Sayapatri excels in training for Cyber Security, Ethical Hacking, Web Development, and Graphics Designing, while also crafting stunning websites and graphics for us. Their hands-on, expert-led approach ensures students master complex skills for real-world success. With customized courses, dedicated trainers, and exceptional design services, Sayapatri delivers the best experience, driving innovation in tech and design. Trust Sayapatri for comprehensive, future-ready solutions.",
       rating: 5,
@@ -22,6 +23,7 @@ const TestimonialsSection = () => {
     {
       name: "Priya Thapa",
       position: "Principal, Everest Academy",
+      location: "Biratnagar, Nepal",
       content:
         "The school management system developed by Sayapatri has completely transformed how we handle student records and communicate with parents. The training provided to our staff was thorough and ensured a smooth transition to the new system.",
       rating: 5,
@@ -30,6 +32,7 @@ const TestimonialsSection = () => {
     {
       name: "Rajesh Magar",
       position: "Director, Nepal Tourism Board",
+      location: "Biratnagar, Nepal",
       content:
         "Working with Sayapatri on our tourism mobile app was a pleasure. Their team took the time to understand our unique requirements and delivered a user-friendly application that showcases Nepal's beauty to travelers worldwide.",
       rating: 4,
@@ -38,6 +41,7 @@ const TestimonialsSection = () => {
     {
       name: "Sita Gurung",
       position: "Marketing Manager, Himalayan Bank",
+      location: "Biratnagar, Nepal",
       content:
         "Sayapatri's training program for our staff was comprehensive and practical. The instructors were knowledgeable and provided real-world examples that helped our team understand complex concepts. Highly recommended!",
       rating: 5,
@@ -82,6 +86,9 @@ const TestimonialsSection = () => {
                           <h3 className="font-bold">{testimonial.name}</h3>
                           <p className="text-gray-600 text-sm">
                             {testimonial.position}
+                          </p>
+                          <p className="text-gray-600 text-sm">
+                            {testimonial.location}
                           </p>
                         </div>
                       </div>
