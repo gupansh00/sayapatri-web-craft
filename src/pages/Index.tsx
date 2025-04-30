@@ -35,7 +35,7 @@ const Index = () => {
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
         variants={sectionVariants}
-        className="shadow-sm"
+        className="shadow-md"
       >
         <AboutSection />
       </motion.div>
@@ -45,7 +45,7 @@ const Index = () => {
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
         variants={sectionVariants}
-        className="shadow-sm"
+        className="shadow-lg"
       >
         <ServicesSection />
       </motion.div>
@@ -55,7 +55,7 @@ const Index = () => {
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
         variants={sectionVariants}
-        className="shadow-sm"
+        className="shadow-md"
       >
         <EventsSection />
       </motion.div>
@@ -65,7 +65,7 @@ const Index = () => {
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
         variants={sectionVariants}
-        className="shadow-sm"
+        className="shadow-md"
       >
         <GallerySection />
       </motion.div>
@@ -75,7 +75,7 @@ const Index = () => {
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
         variants={sectionVariants}
-        className="shadow-sm"
+        className="shadow-md"
       >
         <TestimonialsSection />
       </motion.div>
@@ -85,7 +85,7 @@ const Index = () => {
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
         variants={sectionVariants}
-        className="shadow-sm"
+        className="shadow-md"
       >
         <ContactSection />
       </motion.div>

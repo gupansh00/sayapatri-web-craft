@@ -1,5 +1,7 @@
+
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
+import { Image } from "@/components/ui/image";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -36,7 +38,17 @@ const Navbar = () => {
       )}
     >
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
-        <a href="#" className="flex items-center">
+        <a href="#" className="flex items-center gap-2">
+          <div className={cn(
+            "w-10 h-10 flex items-center justify-center rounded-full overflow-hidden",
+            isScrolled ? "bg-white shadow-md" : "bg-white/80"
+          )}>
+            <img 
+              src="/sayapatri-logo.png" 
+              alt="Sayapatri Logo" 
+              className="w-8 h-8 object-contain"
+            />
+          </div>
           <span
             className={cn(
               "text-2xl font-bold font-heading transition-colors",

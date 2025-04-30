@@ -76,11 +76,13 @@ const ServicesSection = () => {
           {services.map((service, index) => (
             <motion.div 
               key={index}
-              className="service-card bg-white p-8 rounded-lg text-center hover:shadow-lg transition-shadow duration-300 shadow-sm"
+              className="service-card bg-white p-8 rounded-lg text-center hover:shadow-xl transition-all duration-300 shadow-[0_10px_30px_-15px_rgba(0,0,0,0.25)] hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.3)] hover:-translate-y-2"
               variants={itemVariants}
             >
-              <div className="mx-auto">
-                {service.icon}
+              <div className="mx-auto flex justify-center">
+                <div className="p-4 rounded-full bg-sayapatri-50 shadow-inner mb-2">
+                  {service.icon}
+                </div>
               </div>
               <h3 className="text-xl font-bold mb-3">{service.title}</h3>
               <p className="text-gray-600">{service.description}</p>
