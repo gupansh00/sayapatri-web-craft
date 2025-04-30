@@ -11,12 +11,13 @@ import { Star } from "lucide-react";
 const TestimonialsSection = () => {
   const testimonials = [
     {
-      name: "Aarav Sharma",
-      position: "CEO, TechNep",
+      name: "shiva adhikari",
+      position: "Principal, Namuna Bhidya Mandir",
       content:
-        "Sayapatri delivered an outstanding e-commerce platform for our business. Their team was professional, responsive, and delivered the project on time and within budget. We've seen a significant increase in our online sales since launching the website.",
+        "Sayapatri excels in training for Cyber Security, Ethical Hacking, Web Development, and Graphics Designing, while also crafting stunning websites and graphics for us. Their hands-on, expert-led approach ensures students master complex skills for real-world success. With customized courses, dedicated trainers, and exceptional design services, Sayapatri delivers the best experience, driving innovation in tech and design. Trust Sayapatri for comprehensive, future-ready solutions.",
       rating: 5,
-      image: "/placeholder.svg",
+      image:
+        "https://res.cloudinary.com/dkr7x5034/image/upload/v1746016760/WhatsApp_Image_2025-04-30_at_6.17.49_PM_jug5bh.jpg",
     },
     {
       name: "Priya Thapa",
