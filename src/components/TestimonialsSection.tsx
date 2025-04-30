@@ -11,8 +11,8 @@ import { Star } from "lucide-react";
 const TestimonialsSection = () => {
   const testimonials = [
     {
-      name: "shiva adhikari",
-      position: "Principal, Namuna Bhidya Mandir",
+      name: "Shiva Adhikari",
+      position: "Principal, Namuna Vidya Mandir",
       content:
         "Sayapatri excels in training for Cyber Security, Ethical Hacking, Web Development, and Graphics Designing, while also crafting stunning websites and graphics for us. Their hands-on, expert-led approach ensures students master complex skills for real-world success. With customized courses, dedicated trainers, and exceptional design services, Sayapatri delivers the best experience, driving innovation in tech and design. Trust Sayapatri for comprehensive, future-ready solutions.",
       rating: 5,
