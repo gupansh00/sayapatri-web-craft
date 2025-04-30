@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import {
   Carousel,
@@ -13,11 +14,11 @@ import { EmblaCarouselType } from "embla-carousel";
 
 // Service-related images
 const images = [
-  "https://res.cloudinary.com/dfgbiud18/image/upload/v1745944167/1745934693254_copy_rqbcie.jpg",
-  "https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&fit=crop&w=1920&q=80",
+  "/hero-background.jpg",
+  "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=1920&q=80",
   "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=1920&q=80",
-  "https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=1920&q=80",
-  "https://images.unsplash.com/photo-1587440871875-191322ee64b0?auto=format&fit=crop&w=1920&q=80",
+  "/hero-background-2.jpg",
+  "/hero-background-3.jpg",
 ];
 
 const HeroBackgroundSlider = () => {
@@ -112,7 +113,7 @@ const HeroBackgroundSlider = () => {
             </CarouselItem>
           ))}
         </CarouselContent>
-        Slide indicators
+        {/* Slide indicators */}
         <div className="absolute bottom-12 left-0 right-0 flex justify-center items-center gap-4 z-20 cursor-pointer">
           <div className="flex space-x-3">
             {images.map((_, idx) => (
