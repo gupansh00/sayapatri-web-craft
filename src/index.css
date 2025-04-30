@@ -136,32 +136,64 @@
   }
 
   .section-title {
-    @apply text-3xl md:text-4xl font-bold mb-6 text-sayapatri-800 dark:text-white nicey:text-pink-700 font-heading relative;
+    @apply text-3xl md:text-4xl font-bold mb-6 text-sayapatri-800 dark:text-white font-heading relative;
+  }
+
+  .nicey .section-title {
+    @apply text-pink-700;
   }
 
   .section-title::after {
     content: '';
-    @apply absolute bottom-0 left-0 w-16 h-1 bg-sayapatri-500 dark:bg-sayapatri-700 nicey:bg-pink-400;
+    @apply absolute bottom-0 left-0 w-16 h-1 bg-sayapatri-500 dark:bg-sayapatri-700;
     transform: translateY(8px);
   }
 
+  .nicey .section-title::after {
+    @apply bg-pink-400;
+  }
+
   .service-card {
-    @apply p-6 rounded-lg shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-xl bg-white dark:bg-gray-800 nicey:bg-pink-50;
+    @apply p-6 rounded-lg shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-xl bg-white dark:bg-gray-800;
+  }
+
+  .nicey .service-card {
+    @apply bg-pink-50;
   }
 
   .btn-primary {
-    @apply bg-sayapatri-500 hover:bg-sayapatri-600 text-white px-4 py-2 rounded-md transition-colors dark:bg-sayapatri-700 dark:hover:bg-sayapatri-800 nicey:bg-pink-500 nicey:hover:bg-pink-600;
+    @apply bg-sayapatri-500 hover:bg-sayapatri-600 text-white px-4 py-2 rounded-md transition-colors dark:bg-sayapatri-700 dark:hover:bg-sayapatri-800;
+  }
+
+  .nicey .btn-primary {
+    @apply bg-pink-500 hover:bg-pink-600;
   }
 
   .navbar-link {
-    @apply relative hover:text-sayapatri-500 dark:hover:text-sayapatri-400 nicey:hover:text-pink-500 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:origin-left after:scale-0 after:bg-sayapatri-400 dark:after:bg-sayapatri-500 nicey:after:bg-pink-400 after:transition-transform hover:after:scale-100;
+    @apply relative hover:text-sayapatri-500 dark:hover:text-sayapatri-400 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:origin-left after:scale-0 after:bg-sayapatri-400 dark:after:bg-sayapatri-500 after:transition-transform hover:after:scale-100;
+  }
+
+  .nicey .navbar-link:hover {
+    @apply text-pink-500;
+  }
+
+  .nicey .navbar-link::after {
+    @apply bg-pink-400;
   }
 
   .accent-green {
-    @apply text-sayapatri-accent-green dark:text-emerald-400 nicey:text-emerald-500;
+    @apply text-sayapatri-accent-green dark:text-emerald-400;
+  }
+
+  .nicey .accent-green {
+    @apply text-emerald-500;
   }
 
   .accent-blue {
-    @apply text-sayapatri-accent-blue dark:text-blue-400 nicey:text-blue-500;
+    @apply text-sayapatri-accent-blue dark:text-blue-400;
+  }
+
+  .nicey .accent-blue {
+    @apply text-blue-500;
   }
 }

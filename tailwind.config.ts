@@ -68,6 +68,19 @@ export default {
 				"sayapatri-accent": {
 					"green": "#22c55e",
 					"blue": "#0ea5e9"
+				},
+				// Add pink colors for the nicey theme
+				"pink": {
+					"50": "#fdf2f8",
+					"100": "#fce7f3",
+					"200": "#fbcfe8",
+					"300": "#f9a8d4",
+					"400": "#f472b6",
+					"500": "#ec4899",
+					"600": "#db2777",
+					"700": "#be185d",
+					"800": "#9d174d",
+					"900": "#831843"
 				}
 			},
 			fontFamily: {
@@ -113,6 +126,10 @@ export default {
 			}
 		}
 	},
-	plugins: [require("tailwindcss-animate")],
+	plugins: [
+		require("tailwindcss-animate"),
+		function({ addVariant }) {
+			addVariant('nicey', '.nicey &')
+		}
+	],
 } satisfies Config;
-
