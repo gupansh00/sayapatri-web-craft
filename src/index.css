@@ -39,33 +39,33 @@
   }
  
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 224 71% 4%;
+    --foreground: 213 31% 91%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 224 71% 4%;
+    --card-foreground: 213 31% 91%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 224 71% 4%;
+    --popover-foreground: 213 31% 91%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 24 90% 50%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 217.2 32.6% 17.5%;
+    --secondary: 222.2 47.4% 11.2%;
     --secondary-foreground: 210 40% 98%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 223 47% 11%;
+    --muted-foreground: 215.4 16.3% 56.9%;
 
-    --accent: 217.2 32.6% 17.5%;
+    --accent: 216 34% 17%;
     --accent-foreground: 210 40% 98%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --border: 216 34% 17%;
+    --input: 216 34% 17%;
+    --ring: 216 34% 17%;
     
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
@@ -104,33 +104,32 @@
   }
 
   .section-title {
-    @apply text-3xl md:text-4xl font-bold mb-6 text-sayapatri-800 font-heading relative;
+    @apply text-3xl md:text-4xl font-bold mb-6 text-sayapatri-800 dark:text-white font-heading relative;
   }
 
   .section-title::after {
     content: '';
-    @apply absolute bottom-0 left-0 w-16 h-1 bg-sayapatri-500;
+    @apply absolute bottom-0 left-0 w-16 h-1 bg-sayapatri-500 dark:bg-sayapatri-700;
     transform: translateY(8px);
   }
 
   .service-card {
-    @apply p-6 rounded-lg shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-xl;
+    @apply p-6 rounded-lg shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-xl bg-white dark:bg-gray-800;
   }
 
   .btn-primary {
-    @apply bg-sayapatri-500 hover:bg-sayapatri-600 text-white px-4 py-2 rounded-md transition-colors;
+    @apply bg-sayapatri-500 hover:bg-sayapatri-600 text-white px-4 py-2 rounded-md transition-colors dark:bg-sayapatri-700 dark:hover:bg-sayapatri-800;
   }
 
   .navbar-link {
-    @apply relative hover:text-sayapatri-500 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:origin-left after:scale-0 after:bg-sayapatri-400 after:transition-transform hover:after:scale-100;
+    @apply relative hover:text-sayapatri-500 dark:hover:text-sayapatri-400 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:origin-left after:scale-0 after:bg-sayapatri-400 dark:after:bg-sayapatri-500 after:transition-transform hover:after:scale-100;
   }
 
   .accent-green {
-    @apply text-sayapatri-accent-green;
+    @apply text-sayapatri-accent-green dark:text-emerald-400;
   }
 
   .accent-blue {
-    @apply text-sayapatri-accent-blue;
+    @apply text-sayapatri-accent-blue dark:text-blue-400;
   }
 }
-
