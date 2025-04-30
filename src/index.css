@@ -76,6 +76,38 @@
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
+
+  .nicey {
+    --background: 340 100% 97%;
+    --foreground: 340 60% 30%;
+
+    --card: 340 100% 98%;
+    --card-foreground: 340 60% 30%;
+
+    --popover: 340 100% 98%;
+    --popover-foreground: 340 60% 30%;
+
+    --primary: 340 90% 65%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 340 100% 92%;
+    --secondary-foreground: 340 60% 30%;
+
+    --muted: 340 100% 92%;
+    --muted-foreground: 340 40% 50%;
+
+    --accent: 340 100% 92%;
+    --accent-foreground: 340 60% 30%;
+
+    --destructive: 0 70% 65%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 340 100% 88%;
+    --input: 340 100% 88%;
+    --ring: 340 90% 65%;
+
+    --radius: 1rem;
+  }
 }
 
 @layer base {
@@ -104,32 +136,32 @@
   }
 
   .section-title {
-    @apply text-3xl md:text-4xl font-bold mb-6 text-sayapatri-800 dark:text-white font-heading relative;
+    @apply text-3xl md:text-4xl font-bold mb-6 text-sayapatri-800 dark:text-white nicey:text-pink-700 font-heading relative;
   }
 
   .section-title::after {
     content: '';
-    @apply absolute bottom-0 left-0 w-16 h-1 bg-sayapatri-500 dark:bg-sayapatri-700;
+    @apply absolute bottom-0 left-0 w-16 h-1 bg-sayapatri-500 dark:bg-sayapatri-700 nicey:bg-pink-400;
     transform: translateY(8px);
   }
 
   .service-card {
-    @apply p-6 rounded-lg shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-xl bg-white dark:bg-gray-800;
+    @apply p-6 rounded-lg shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-xl bg-white dark:bg-gray-800 nicey:bg-pink-50;
   }
 
   .btn-primary {
-    @apply bg-sayapatri-500 hover:bg-sayapatri-600 text-white px-4 py-2 rounded-md transition-colors dark:bg-sayapatri-700 dark:hover:bg-sayapatri-800;
+    @apply bg-sayapatri-500 hover:bg-sayapatri-600 text-white px-4 py-2 rounded-md transition-colors dark:bg-sayapatri-700 dark:hover:bg-sayapatri-800 nicey:bg-pink-500 nicey:hover:bg-pink-600;
   }
 
   .navbar-link {
-    @apply relative hover:text-sayapatri-500 dark:hover:text-sayapatri-400 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:origin-left after:scale-0 after:bg-sayapatri-400 dark:after:bg-sayapatri-500 after:transition-transform hover:after:scale-100;
+    @apply relative hover:text-sayapatri-500 dark:hover:text-sayapatri-400 nicey:hover:text-pink-500 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:origin-left after:scale-0 after:bg-sayapatri-400 dark:after:bg-sayapatri-500 nicey:after:bg-pink-400 after:transition-transform hover:after:scale-100;
   }
 
   .accent-green {
-    @apply text-sayapatri-accent-green dark:text-emerald-400;
+    @apply text-sayapatri-accent-green dark:text-emerald-400 nicey:text-emerald-500;
   }
 
   .accent-blue {
-    @apply text-sayapatri-accent-blue dark:text-blue-400;
+    @apply text-sayapatri-accent-blue dark:text-blue-400 nicey:text-blue-500;
   }
 }
