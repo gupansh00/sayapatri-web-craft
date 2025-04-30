@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
@@ -75,6 +74,9 @@
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+    
+    /* Additional dark theme background for main sections */
+    --main-background: 220 20% 10%;
   }
 
   .nicey {
@@ -117,6 +119,19 @@
 
   body {
     @apply bg-background text-foreground font-sans scroll-smooth;
+  }
+
+  /* Ensure main sections and body have proper dark theme styling */
+  .dark body {
+    @apply bg-[#121212];
+  }
+
+  main, section {
+    @apply bg-background;
+  }
+  
+  .dark main, .dark section {
+    @apply bg-[#121212];
   }
 
   html {
