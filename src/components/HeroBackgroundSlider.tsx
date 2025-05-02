@@ -4,8 +4,6 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
 } from "@/components/ui/carousel";
 
 import Autoplay from "embla-carousel-autoplay";
@@ -68,7 +66,7 @@ const HeroBackgroundSlider = () => {
         setApi={setApi}
         className="w-full h-full"
       >
-        <CarouselContent className="h-full ">
+        <CarouselContent className="h-full">
           {images.map((image, index) => (
             <CarouselItem key={index} className="h-full w-full">
               <AnimatePresence mode="wait">
@@ -123,7 +121,7 @@ const HeroBackgroundSlider = () => {
                   e.stopPropagation();
                   handleIndicatorClick(idx);
                 }}
-                className={`w-3 h-3 rounded-full transition-all duration-500  cursor-pointer
+                className={`w-3 h-3 rounded-full transition-all duration-500 cursor-pointer
                   ${
                     currentIndex === idx
                       ? "bg-white w-6 scale-110"
@@ -141,14 +139,6 @@ const HeroBackgroundSlider = () => {
             ))}
           </div>
         </div>
-        {/* <CarouselPrevious
-          className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white border-none z-20 transition-transform duration-300 hover:scale-110 "
-          aria-label="Previous slide "
-        />
-        <CarouselNext
-          className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white border-none z-20 transition-transform duration-300 hover:scale-110"
-          aria-label="Next slide"
-        /> */}
       </Carousel>
     </div>
   );
