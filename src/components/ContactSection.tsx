@@ -104,7 +104,11 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="section-padding bg-white">
+    <section
+      id="contact"
+      className="section-padding bg-white dark:bg-[rgb(23,30,47)]
+"
+    >
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-12">
           <h2 className="section-title mx-auto after:left-1/2 after:-translate-x-1/2">

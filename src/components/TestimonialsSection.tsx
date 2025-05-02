@@ -1,4 +1,3 @@
-
 import {
   Carousel,
   CarouselContent,
@@ -51,7 +50,10 @@ const TestimonialsSection = () => {
   ];
 
   return (
-    <section id="testimonials" className="section-padding bg-gray-50 dark:bg-gray-800">
+    <section
+      id="testimonials"
+      className="section-padding bg-gray-50 dark:bg-gray-900"
+    >
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-12">
           <h2 className="section-title mx-auto after:left-1/2 after:-translate-x-1/2">
@@ -84,7 +86,9 @@ const TestimonialsSection = () => {
                           />
                         </div>
                         <div>
-                          <h3 className="font-bold dark:text-white">{testimonial.name}</h3>
+                          <h3 className="font-bold dark:text-white">
+                            {testimonial.name}
+                          </h3>
                           <p className="text-gray-600 dark:text-gray-300 text-sm">
                             {testimonial.position}
                           </p>

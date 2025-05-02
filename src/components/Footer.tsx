@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import {
@@ -39,8 +38,8 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-gradient-to-r from-sayapatri-500 to-sayapatri-700 text-white pt-16 pb-8">
-      <div className="container mx-auto px-4 md:px-6">
+    <footer className="bg-gradient-to-r from-sayapatri-500 to-sayapatri-700 dark:bg-gray-900 dark:bg-none text-white pt-16 pb-8">
+      <div className="container mx-auto px-4 md:px-6 ">
         <motion.div
           className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12"
           variants={containerVariants}

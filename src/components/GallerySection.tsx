@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -29,7 +28,7 @@ const GallerySection = () => {
   };
 
   return (
-    <section id="gallery" className="section-padding bg-white dark:bg-gray-900">
+    <section id="gallery" className="section-padding bg-white dark:bg-gray-800">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-12">
           <h2 className="section-title mx-auto after:left-1/2 after:-translate-x-1/2">
