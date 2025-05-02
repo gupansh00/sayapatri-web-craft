@@ -11,7 +11,7 @@ export function ThemeToggle() {
       onClick={toggleTheme}
       className={cn(
         "p-2 rounded-full focus:outline-none transition-colors",
-        theme === "dark" ? "text-white" : "text-sayapatri-800"
+        theme === "dark" ? "text-white hover:bg-gray-800" : "text-sayapatri-800 hover:bg-gray-100"
       )}
       aria-label="Toggle theme"
     >

@@ -1,3 +1,4 @@
+
 import {
   Carousel,
   CarouselContent,
@@ -50,13 +51,13 @@ const TestimonialsSection = () => {
   ];
 
   return (
-    <section id="testimonials" className="section-padding bg-gray-50">
+    <section id="testimonials" className="section-padding bg-gray-50 dark:bg-gray-800">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-12">
           <h2 className="section-title mx-auto after:left-1/2 after:-translate-x-1/2">
             Client Testimonials
           </h2>
-          <p className="max-w-2xl mx-auto text-gray-600">
+          <p className="max-w-2xl mx-auto text-gray-600 dark:text-gray-300">
             Don't just take our word for it - see what our clients have to say
             about working with Sayapatri.
           </p>
@@ -72,7 +73,7 @@ const TestimonialsSection = () => {
             <CarouselContent>
               {testimonials.map((testimonial, index) => (
                 <CarouselItem key={index} className="md:basis-1/2 p-4">
-                  <Card className="h-full border-0 shadow-lg">
+                  <Card className="h-full border-0 shadow-lg dark:bg-gray-700">
                     <CardContent className="p-6 flex flex-col h-full">
                       <div className="flex items-center gap-4 mb-4">
                         <div className="w-16 h-16 rounded-full overflow-hidden">
@@ -83,17 +84,17 @@ const TestimonialsSection = () => {
                           />
                         </div>
                         <div>
-                          <h3 className="font-bold">{testimonial.name}</h3>
-                          <p className="text-gray-600 text-sm">
+                          <h3 className="font-bold dark:text-white">{testimonial.name}</h3>
+                          <p className="text-gray-600 dark:text-gray-300 text-sm">
                             {testimonial.position}
                           </p>
-                          <p className="text-gray-600 text-sm">
+                          <p className="text-gray-600 dark:text-gray-300 text-sm">
                             {testimonial.location}
                           </p>
                         </div>
                       </div>
 
-                      <p className="text-gray-600 mb-4 flex-grow">
+                      <p className="text-gray-600 dark:text-gray-300 mb-4 flex-grow">
                         {testimonial.content}
                       </p>
 
@@ -104,7 +105,7 @@ const TestimonialsSection = () => {
                             className={`h-4 w-4 ${
                               i < testimonial.rating
                                 ? "fill-yellow-400 text-yellow-400"
-                                : "text-gray-300"
+                                : "text-gray-300 dark:text-gray-500"
                             }`}
                           />
                         ))}
@@ -115,8 +116,8 @@ const TestimonialsSection = () => {
               ))}
             </CarouselContent>
             <div className="flex justify-center mt-6 gap-2">
-              <CarouselPrevious className="relative static translate-y-0" />
-              <CarouselNext className="relative static translate-y-0" />
+              <CarouselPrevious className="relative static translate-y-0 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600" />
+              <CarouselNext className="relative static translate-y-0 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600" />
             </div>
           </Carousel>
         </div>

@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -7,15 +8,6 @@ const GallerySection = () => {
   const [selectedImage, setSelectedImage] = useState("");
 
   const images = {
-    // office: [
-    //   "/placeholder.svg",
-    //   "/placeholder.svg",
-    //   "/placeholder.svg",
-    //   "/placeholder.svg",
-    //   "/placeholder.svg",
-    //   "/placeholder.svg",
-    //   "/placeholder.svg",
-    // ],
     events: [
       "https://res.cloudinary.com/dfgbiud18/image/upload/v1745944166/1745934693271_xanbhb.jpg",
       "https://res.cloudinary.com/dfgbiud18/image/upload/v1745948475/1745944087498_qjkdau.jpg",
@@ -26,18 +18,9 @@ const GallerySection = () => {
       "https://res.cloudinary.com/dfgbiud18/image/upload/v1745948477/1745944087522_m1oz98.jpg",
       "https://res.cloudinary.com/dfgbiud18/image/upload/v1745949488/487098759_1151661726971406_5286530456418803876_n_jtbzya.jpg",
       "https://res.cloudinary.com/dfgbiud18/image/upload/v1745949487/487442715_1151659400304972_2649421218059992094_n_vgta6k.jpg",
-
       "https://res.cloudinary.com/dfgbiud18/image/upload/v1745949487/487312882_1151659356971643_8069178518043272483_n_ywgx8j.jpg",
       "https://res.cloudinary.com/dfgbiud18/image/upload/v1745949487/486961802_1151659396971639_6782054894004284888_n_mjilox.jpg",
     ],
-    // team: [
-    //   "/placeholder.svg",
-    //   "/placeholder.svg",
-    //   "/placeholder.svg",
-    //   "/placeholder.svg",
-    //   "/placeholder.svg",
-    //   "/placeholder.svg",
-    // ],
   };
 
   const openLightbox = (imageSrc: string) => {
@@ -46,23 +29,19 @@ const GallerySection = () => {
   };
 
   return (
-    <section id="gallery" className="section-padding bg-white">
+    <section id="gallery" className="section-padding bg-white dark:bg-gray-900">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-12">
           <h2 className="section-title mx-auto after:left-1/2 after:-translate-x-1/2">
             Our Gallery
           </h2>
-          <p className="max-w-2xl mx-auto text-gray-700">
+          <p className="max-w-2xl mx-auto text-gray-700 dark:text-gray-300">
             Take a visual journey through our events.
           </p>
         </div>
 
         <Tabs defaultValue="events" className="mx-auto max-w-4xl">
-          {/* <TabsList className="grid grid-cols-3 mb-8">
-            <TabsTrigger value="office">Our Office</TabsTrigger>
-            <TabsTrigger value="events">Events</TabsTrigger>
-            <TabsTrigger value="team">Our Team</TabsTrigger>
-          </TabsList> */}
+          {/* TabsList would go here if needed */}
 
           {Object.entries(images).map(([category, imgs]) => (
             <TabsContent key={category} value={category} className="mt-0">
@@ -70,7 +49,7 @@ const GallerySection = () => {
                 {imgs.map((img, idx) => (
                   <div
                     key={idx}
-                    className="aspect-square overflow-hidden rounded-md cursor-pointer hover:opacity-90 transition-opacity"
+                    className="aspect-square overflow-hidden rounded-md cursor-pointer hover:opacity-90 transition-opacity dark:bg-gray-800"
                     onClick={() => openLightbox(img)}
                   >
                     <img

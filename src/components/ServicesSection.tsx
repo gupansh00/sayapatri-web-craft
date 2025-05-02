@@ -57,11 +57,11 @@ const ServicesSection = () => {
   };
 
   return (
-    <section id="services" className="section-padding bg-gray-50 py-20">
+    <section id="services" className="section-padding bg-gray-50 dark:bg-gray-800 py-20">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-16">
           <h2 className="section-title mx-auto after:left-1/2 after:-translate-x-1/2 text-3xl md:text-4xl font-bold mb-6">Our Services</h2>
-          <p className="max-w-2xl mx-auto text-gray-600 text-lg">
+          <p className="max-w-2xl mx-auto text-gray-600 dark:text-gray-300 text-lg">
             We offer a comprehensive range of IT services designed to meet your business needs and help you stay ahead in the digital landscape.
           </p>
         </div>
@@ -76,16 +76,16 @@ const ServicesSection = () => {
           {services.map((service, index) => (
             <motion.div 
               key={index}
-              className="service-card bg-white p-8 rounded-lg text-center hover:shadow-xl transition-all duration-300 shadow-[0_10px_30px_-15px_rgba(0,0,0,0.25)] hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.3)] hover:-translate-y-2"
+              className="service-card bg-white dark:bg-gray-700 p-8 rounded-lg text-center hover:shadow-xl transition-all duration-300 shadow-[0_10px_30px_-15px_rgba(0,0,0,0.25)] hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.3)] dark:shadow-[0_10px_30px_-15px_rgba(0,0,0,0.5)] hover:-translate-y-2"
               variants={itemVariants}
             >
               <div className="mx-auto flex justify-center">
-                <div className="p-4 rounded-full bg-sayapatri-50 shadow-inner mb-2">
+                <div className="p-4 rounded-full bg-sayapatri-50 dark:bg-gray-600 shadow-inner mb-2">
                   {service.icon}
                 </div>
               </div>
-              <h3 className="text-xl font-bold mb-3">{service.title}</h3>
-              <p className="text-gray-600">{service.description}</p>
+              <h3 className="text-xl font-bold mb-3 dark:text-white">{service.title}</h3>
+              <p className="text-gray-600 dark:text-gray-300">{service.description}</p>
             </motion.div>
           ))}
         </motion.div>

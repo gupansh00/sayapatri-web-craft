@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import {
@@ -29,8 +30,6 @@ const Footer = () => {
       href: "https://www.facebook.com/sayapatri01",
       target: "blank",
     },
-    // { name: "Twitter", icon: <Twitter size={20} />, href: "#" },
-    // { name: "Instagram", icon: <Instagram size={20} />, href: "#" },
     {
       name: "LinkedIn",
       icon: <Linkedin size={20} />,

@@ -1,3 +1,4 @@
+
 import { Card, CardContent } from "@/components/ui/card";
 import { Award, Users, Target } from "lucide-react";
 
@@ -24,19 +25,19 @@ const AboutSection = () => {
   ];
 
   return (
-    <section id="about" className="section-padding bg-white">
+    <section id="about" className="section-padding bg-white dark:bg-gray-900">
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
             <h2 className="section-title">About Sayapatri</h2>
-            <p className="mb-4 text-gray-600">
+            <p className="mb-4 text-gray-600 dark:text-gray-300">
               Founded in 2024, Sayapatri is a premier IT company based in Nepal,
               dedicated to delivering exceptional technology solutions and
               education. With a team of skilled professionals, we combine
               technical expertise with creative thinking to help businesses grow
               in the digital landscape.
             </p>
-            <p className="mb-6 text-gray-600">
+            <p className="mb-6 text-gray-600 dark:text-gray-300">
               Our mission is to empower Nepalese businesses and individuals with
               the knowledge and tools they need to thrive in a globally
               competitive market. We are committed to contributing to Nepal's
@@ -46,28 +47,28 @@ const AboutSection = () => {
 
             <div className="flex items-center space-x-6">
               <div>
-                <p className="text-4xl font-bold text-sayapatri-600">10+</p>
-                <p className="text-sm text-gray-500">Projects Completed</p>
+                <p className="text-4xl font-bold text-sayapatri-600 dark:text-sayapatri-400">10+</p>
+                <p className="text-sm text-gray-500 dark:text-gray-400">Projects Completed</p>
               </div>
 
               <div>
-                <p className="text-4xl font-bold text-sayapatri-600">500+</p>
-                <p className="text-sm text-gray-500">Students Trained</p>
+                <p className="text-4xl font-bold text-sayapatri-600 dark:text-sayapatri-400">500+</p>
+                <p className="text-sm text-gray-500 dark:text-gray-400">Students Trained</p>
               </div>
             </div>
           </div>
 
           <div className="space-y-6">
-            <h3 className="text-xl font-bold text-sayapatri-700 mb-4">
+            <h3 className="text-xl font-bold text-sayapatri-700 dark:text-sayapatri-400 mb-4">
               Our Core Values
             </h3>
             {values.map((value, index) => (
-              <Card key={index} className="border-l-4 border-l-sayapatri-500">
+              <Card key={index} className="border-l-4 border-l-sayapatri-500 dark:bg-gray-800 dark:border-sayapatri-400">
                 <CardContent className="p-6 flex gap-4">
                   {value.icon}
                   <div>
-                    <h4 className="font-bold text-lg">{value.title}</h4>
-                    <p className="text-gray-600">{value.description}</p>
+                    <h4 className="font-bold text-lg dark:text-white">{value.title}</h4>
+                    <p className="text-gray-600 dark:text-gray-300">{value.description}</p>
                   </div>
                 </CardContent>
               </Card>
