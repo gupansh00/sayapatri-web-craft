@@ -98,7 +98,7 @@ const Navbar = () => {
 
         <nav
           className={cn(
-            "absolute md:relative top-full left-0 right-0 md:top-0 w-full md:w-auto bg-white dark:bg-gray-900 md:bg-transparent shadow-lg md:shadow-none transition-all duration-300",
+            "absolute md:relative top-full left-0 right-0 md:top-0 w-full md:w-auto dark:bg-gray-900 md:dark:bg-transparent bg-white md:bg-transparent shadow-lg md:shadow-none transition-all duration-300",
             isMobileMenuOpen ? "block" : "hidden md:block",
             isScrolled ? "md:text-sayapatri-800 md:dark:text-white" : "md:text-white"
           )}

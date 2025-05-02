@@ -66,15 +66,6 @@
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
-    
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
 
@@ -84,11 +75,15 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans scroll-smooth dark:bg-gray-900;
+    @apply bg-background text-foreground font-sans scroll-smooth;
   }
 
   html {
     scroll-behavior: smooth;
+  }
+  
+  .dark {
+    color-scheme: dark;
   }
 }
 
@@ -109,7 +104,7 @@
 
   .section-title::after {
     content: '';
-    @apply absolute bottom-0 left-0 w-16 h-1 bg-sayapatri-500;
+    @apply absolute bottom-0 left-0 w-16 h-1 bg-sayapatri-500 dark:bg-sayapatri-400;
     transform: translateY(8px);
   }
 
