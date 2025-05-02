@@ -139,14 +139,14 @@ const Footer = () => {
           </p>
           <p className="mt-2">
             <a
-              href="#"
+              // href="#"
               className="hover:text-white transition-colors hover:underline"
             >
               Privacy Policy
             </a>
             <span className="mx-2">|</span>
             <a
-              href="#"
+              // href="#"
               className="hover:text-white transition-colors hover:underline"
             >
               Terms of Service

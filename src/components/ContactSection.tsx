@@ -114,7 +114,7 @@ const ContactSection = () => {
           <h2 className="section-title mx-auto after:left-1/2 after:-translate-x-1/2">
             Contact Us
           </h2>
-          <p className="max-w-2xl mx-auto text-gray-600">
+          <p className="max-w-2xl mx-auto text-white ">
             Have questions or want to discuss a project? Get in touch with our
             team today.
           </p>
@@ -170,7 +170,7 @@ const ContactSection = () => {
                 <div>
                   <label
                     htmlFor="name"
-                    className="block text-sm font-medium text-gray-700 mb-1"
+                    className="block text-sm font-medium text-white mb-1"
                   >
                     Name
                   </label>
@@ -187,7 +187,7 @@ const ContactSection = () => {
                 <div>
                   <label
                     htmlFor="email"
-                    className="block text-sm font-medium text-gray-700 mb-1"
+                    className="block text-sm font-medium text-white mb-1"
                   >
                     Email
                   </label>
@@ -207,7 +207,7 @@ const ContactSection = () => {
               <div>
                 <label
                   htmlFor="subject"
-                  className="block text-sm font-medium text-gray-700 mb-1"
+                  className="block text-sm font-medium text-white mb-1"
                 >
                   Subject
                 </label>
@@ -225,7 +225,7 @@ const ContactSection = () => {
               <div>
                 <label
                   htmlFor="message"
-                  className="block text-sm font-medium text-gray-700 mb-1"
+                  className="block text-sm font-medium text-white mb-1"
                 >
                   Message
                 </label>
