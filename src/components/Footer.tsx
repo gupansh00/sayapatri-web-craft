@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import {
@@ -41,7 +40,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-gradient-to-r from-sayapatri-500 to-sayapatri-700 dark:from-gray-800 dark:to-gray-900 text-white pt-16 pb-8">
+    <footer className="bg-gradient-to-r from-sayapatri-500 to-sayapatri-700 text-white pt-16 pb-8">
       <div className="container mx-auto px-4 md:px-6">
         <motion.div
           className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12"
@@ -51,10 +50,10 @@ const Footer = () => {
           viewport={{ once: true }}
         >
           <motion.div variants={itemVariants}>
-            <h3 className="font-bold text-xl mb-4 relative inline-block after:content-[''] after:absolute after:w-12 after:h-1 after:bg-sayapatri-500 dark:after:bg-gray-500 after:bottom-0 after:left-0 after:-mb-2">
+            <h3 className="font-bold text-xl mb-4 relative inline-block after:content-[''] after:absolute after:w-12 after:h-1 after:bg-sayapatri-500 after:bottom-0 after:left-0 after:-mb-2">
               Sayapatri
             </h3>
-            <p className="text-gray-300 dark:text-gray-400 mb-4">
+            <p className="text-gray-300 mb-4">
               Empowering Nepal through innovative IT solutions and comprehensive
               training programs.
             </p>
@@ -65,7 +64,7 @@ const Footer = () => {
                   href={social.href}
                   aria-label={social.name}
                   target={social.target}
-                  className="text-white hover:text-blue-100 bg-blue-800 dark:bg-blue-900 p-2 rounded-full transition-all duration-300 hover:-translate-y-1"
+                  className="text-white hover:text-blue-100 bg-blue-800 p-2 rounded-full transition-all duration-300 hover:-translate-y-1"
                 >
                   <span className="sr-only">{social.name}</span>
                   {social.icon}
@@ -75,7 +74,7 @@ const Footer = () => {
           </motion.div>
 
           <motion.div variants={itemVariants}>
-            <h3 className="font-bold text-xl mb-4 relative inline-block after:content-[''] after:absolute after:w-12 after:h-1 after:bg-sayapatri-500 dark:after:bg-gray-500 after:bottom-0 after:left-0 after:-mb-2">
+            <h3 className="font-bold text-xl mb-4 relative inline-block after:content-[''] after:absolute after:w-12 after:h-1 after:bg-sayapatri-500 after:bottom-0 after:left-0 after:-mb-2">
               Quick Links
             </h3>
             <ul className="space-y-2">
@@ -93,9 +92,9 @@ const Footer = () => {
                 >
                   <a
                     href={`#${link.toLowerCase()}`}
-                    className="text-gray-300 dark:text-gray-400 hover:text-white flex items-center"
+                    className="text-gray-300 hover:text-white flex items-center"
                   >
-                    <span className="mr-2 text-slate-600 dark:text-slate-500">›</span> {link}
+                    <span className="mr-2 text-slate-600">›</span> {link}
                   </a>
                 </li>
               ))}
@@ -103,7 +102,7 @@ const Footer = () => {
           </motion.div>
 
           <motion.div variants={itemVariants}>
-            <h3 className="font-bold text-xl mb-4 relative inline-block after:content-[''] after:absolute after:w-12 after:h-1 after:bg-sayapatri-500 dark:after:bg-gray-500 after:bottom-0 after:left-0 after:-mb-2">
+            <h3 className="font-bold text-xl mb-4 relative inline-block after:content-[''] after:absolute after:w-12 after:h-1 after:bg-sayapatri-500 after:bottom-0 after:left-0 after:-mb-2">
               Services
             </h3>
             <ul className="space-y-2">
@@ -121,9 +120,9 @@ const Footer = () => {
                 >
                   <a
                     href="#services"
-                    className="text-gray-300 dark:text-gray-400 hover:text-white flex items-center"
+                    className="text-gray-300 hover:text-white flex items-center"
                   >
-                    <span className="mr-2 text-slate-600 dark:text-slate-500">›</span> {service}
+                    <span className="mr-2 text-slate-600">›</span> {service}
                   </a>
                 </li>
               ))}
@@ -132,7 +131,7 @@ const Footer = () => {
         </motion.div>
 
         <motion.div
-          className="border-t border-sayapatri-700 dark:border-gray-700 pt-8 mt-8 text-center text-gray-300 dark:text-gray-400 text-sm"
+          className="border-t border-sayapatri-700 pt-8 mt-8 text-center text-gray-300 text-sm"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1, transition: { delay: 0.5 } }}
           viewport={{ once: true }}

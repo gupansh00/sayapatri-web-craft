@@ -1,9 +1,10 @@
-
 import React, { useState, useEffect } from "react";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
 } from "@/components/ui/carousel";
 
 import Autoplay from "embla-carousel-autoplay";
@@ -12,11 +13,11 @@ import { EmblaCarouselType } from "embla-carousel";
 
 // Service-related images
 const images = [
-  "/hero-background.jpg",
-  "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=1920&q=80",
+  "https://res.cloudinary.com/dfgbiud18/image/upload/v1745944167/1745934693254_copy_rqbcie.jpg",
+  "https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&fit=crop&w=1920&q=80",
   "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=1920&q=80",
-  "/hero-background-2.jpg",
-  "/hero-background-3.jpg",
+  "https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=1920&q=80",
+  "https://images.unsplash.com/photo-1587440871875-191322ee64b0?auto=format&fit=crop&w=1920&q=80",
 ];
 
 const HeroBackgroundSlider = () => {
@@ -66,7 +67,7 @@ const HeroBackgroundSlider = () => {
         setApi={setApi}
         className="w-full h-full"
       >
-        <CarouselContent className="h-full">
+        <CarouselContent className="h-full ">
           {images.map((image, index) => (
             <CarouselItem key={index} className="h-full w-full">
               <AnimatePresence mode="wait">
@@ -111,7 +112,7 @@ const HeroBackgroundSlider = () => {
             </CarouselItem>
           ))}
         </CarouselContent>
-        {/* Slide indicators */}
+        Slide indicators
         <div className="absolute bottom-12 left-0 right-0 flex justify-center items-center gap-4 z-20 cursor-pointer">
           <div className="flex space-x-3">
             {images.map((_, idx) => (
@@ -121,7 +122,7 @@ const HeroBackgroundSlider = () => {
                   e.stopPropagation();
                   handleIndicatorClick(idx);
                 }}
-                className={`w-3 h-3 rounded-full transition-all duration-500 cursor-pointer
+                className={`w-3 h-3 rounded-full transition-all duration-500  cursor-pointer
                   ${
                     currentIndex === idx
                       ? "bg-white w-6 scale-110"
@@ -139,6 +140,14 @@ const HeroBackgroundSlider = () => {
             ))}
           </div>
         </div>
+        {/* <CarouselPrevious
+          className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white border-none z-20 transition-transform duration-300 hover:scale-110 "
+          aria-label="Previous slide "
+        />
+        <CarouselNext
+          className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white border-none z-20 transition-transform duration-300 hover:scale-110"
+          aria-label="Next slide"
+        /> */}
       </Carousel>
     </div>
   );
