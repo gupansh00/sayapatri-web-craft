@@ -84,7 +84,7 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans scroll-smooth;
+    @apply bg-background text-foreground font-sans scroll-smooth dark:bg-gray-900;
   }
 
   html {
@@ -104,7 +104,7 @@
   }
 
   .section-title {
-    @apply text-3xl md:text-4xl font-bold mb-6 text-sayapatri-800 font-heading relative;
+    @apply text-3xl md:text-4xl font-bold mb-6 text-sayapatri-800 dark:text-white font-heading relative;
   }
 
   .section-title::after {
@@ -114,7 +114,7 @@
   }
 
   .service-card {
-    @apply p-6 rounded-lg shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-xl;
+    @apply p-6 rounded-lg shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-xl dark:bg-gray-800;
   }
 
   .btn-primary {
@@ -122,7 +122,7 @@
   }
 
   .navbar-link {
-    @apply relative hover:text-sayapatri-500 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:origin-left after:scale-0 after:bg-sayapatri-400 after:transition-transform hover:after:scale-100;
+    @apply relative hover:text-sayapatri-500 dark:hover:text-sayapatri-300 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:origin-left after:scale-0 after:bg-sayapatri-400 dark:after:bg-sayapatri-300 after:transition-transform hover:after:scale-100;
   }
 
   .accent-green {
@@ -133,4 +133,3 @@
     @apply text-sayapatri-accent-blue;
   }
 }
-
