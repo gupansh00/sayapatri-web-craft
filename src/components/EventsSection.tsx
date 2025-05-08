@@ -2,8 +2,11 @@
 import { Calendar } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import useTypewriterEffect from "@/hooks/useTypewriterEffect";
 
 const EventsSection = () => {
+  const titleRef = useTypewriterEffect();
+  
   const events = [
     {
       title: "Web Development Workshop",
@@ -41,7 +44,7 @@ const EventsSection = () => {
     <section id="events" className="section-padding bg-gray-50 dark:bg-gray-900">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-12">
-          <h2 className="section-title mx-auto after:left-1/2 after:-translate-x-1/2">
+          <h2 ref={titleRef} className="section-title before-typewriter mx-auto after:left-1/2 after:-translate-x-1/2">
             Upcoming Events
           </h2>
           <p className="max-w-2xl mx-auto text-gray-600 dark:text-gray-300">
@@ -92,12 +95,6 @@ const EventsSection = () => {
             </Card>
           ))}
         </div>
-
-        {/* <div className="text-center mt-8">
-          <a href="#" className="btn-primary inline-block">
-            View All Events
-          </a>
-        </div> */}
       </div>
     </section>
   );

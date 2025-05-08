@@ -1,8 +1,35 @@
 
+import { useEffect, useRef } from "react";
 import ContactForm from "./contact/ContactForm";
 import ContactInfo from "./contact/ContactInfo";
 
 const ContactSection = () => {
+  const titleRef = useRef<HTMLHeadingElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate-typewriter");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    if (titleRef.current) {
+      observer.observe(titleRef.current);
+    }
+
+    return () => {
+      if (titleRef.current) {
+        observer.unobserve(titleRef.current);
+      }
+    };
+  }, []);
+
   return (
     <section
       id="contact"
@@ -10,7 +37,7 @@ const ContactSection = () => {
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-12">
-          <h2 className="section-title mx-auto after:left-1/2 after:-translate-x-1/2">
+          <h2 ref={titleRef} className="section-title before-typewriter mx-auto after:left-1/2 after:-translate-x-1/2">
             Contact Us
           </h2>
           <p className="max-w-2xl mx-auto text-white">

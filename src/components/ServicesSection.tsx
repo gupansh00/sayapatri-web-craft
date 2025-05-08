@@ -1,8 +1,11 @@
 
 import { Code, Smartphone, Pencil, Video, Palette, Book } from "lucide-react";
 import { motion } from "framer-motion";
+import useTypewriterEffect from "@/hooks/useTypewriterEffect";
 
 const ServicesSection = () => {
+  const titleRef = useTypewriterEffect();
+  
   const services = [
     {
       icon: <Code className="h-12 w-12 text-sayapatri-500 mb-4" />,
@@ -60,7 +63,7 @@ const ServicesSection = () => {
     <section id="services" className="section-padding bg-gray-50 dark:bg-gray-800 py-20">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-16">
-          <h2 className="section-title mx-auto after:left-1/2 after:-translate-x-1/2 text-3xl md:text-4xl font-bold mb-6">Our Services</h2>
+          <h2 ref={titleRef} className="section-title before-typewriter mx-auto after:left-1/2 after:-translate-x-1/2 text-3xl md:text-4xl font-bold mb-6">Our Services</h2>
           <p className="max-w-2xl mx-auto text-gray-600 dark:text-gray-300 text-lg">
             We offer a comprehensive range of IT services designed to meet your business needs and help you stay ahead in the digital landscape.
           </p>

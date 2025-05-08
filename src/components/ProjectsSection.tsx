@@ -2,8 +2,11 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight } from "lucide-react";
+import useTypewriterEffect from "@/hooks/useTypewriterEffect";
 
 const ProjectsSection = () => {
+  const titleRef = useTypewriterEffect();
+  
   const projects = [
     {
       title: "E-commerce Platform",
@@ -39,7 +42,7 @@ const ProjectsSection = () => {
     <section id="projects" className="section-padding bg-white dark:bg-gray-900">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-12">
-          <h2 className="section-title mx-auto after:left-1/2 after:-translate-x-1/2">Our Projects</h2>
+          <h2 ref={titleRef} className="section-title before-typewriter mx-auto after:left-1/2 after:-translate-x-1/2">Our Projects</h2>
           <p className="max-w-2xl mx-auto text-gray-600 dark:text-gray-300">
             Explore our portfolio of successful projects that demonstrate our technical expertise and commitment to excellence.
           </p>

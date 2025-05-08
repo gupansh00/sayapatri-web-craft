@@ -1,10 +1,13 @@
+
 import { useState } from "react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import useTypewriterEffect from "@/hooks/useTypewriterEffect";
 
 const GallerySection = () => {
   const [open, setOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState("");
+  const titleRef = useTypewriterEffect();
 
   const images = {
     events: [
@@ -31,7 +34,7 @@ const GallerySection = () => {
     <section id="gallery" className="section-padding bg-white dark:bg-gray-800">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-12">
-          <h2 className="section-title mx-auto after:left-1/2 after:-translate-x-1/2">
+          <h2 ref={titleRef} className="section-title before-typewriter mx-auto after:left-1/2 after:-translate-x-1/2">
             Our Gallery
           </h2>
           <p className="max-w-2xl mx-auto text-gray-700 dark:text-gray-300">

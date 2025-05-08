@@ -1,8 +1,11 @@
 
 import { Card, CardContent } from "@/components/ui/card";
 import { Award, Users, Target } from "lucide-react";
+import useTypewriterEffect from "@/hooks/useTypewriterEffect";
 
 const AboutSection = () => {
+  const titleRef = useTypewriterEffect();
+  
   const values = [
     {
       icon: <Users className="h-8 w-8 text-sayapatri-500" />,
@@ -29,7 +32,7 @@ const AboutSection = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 className="section-title">About Sayapatri</h2>
+            <h2 ref={titleRef} className="section-title before-typewriter">About Sayapatri</h2>
             <p className="mb-4 text-gray-600 dark:text-gray-300">
               Founded in 2024, Sayapatri is a premier IT company based in Nepal,
               dedicated to delivering exceptional technology solutions and

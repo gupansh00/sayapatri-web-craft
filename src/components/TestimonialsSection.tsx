@@ -1,3 +1,4 @@
+
 import {
   Carousel,
   CarouselContent,
@@ -7,8 +8,11 @@ import {
 } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
 import { Star } from "lucide-react";
+import useTypewriterEffect from "@/hooks/useTypewriterEffect";
 
 const TestimonialsSection = () => {
+  const titleRef = useTypewriterEffect();
+  
   const testimonials = [
     {
       name: "Shiva Adhikari",
@@ -26,7 +30,7 @@ const TestimonialsSection = () => {
       position: "Principal, Purbanchal Vidhya Sadan B. School",
       location: "Biratnagar, Nepal",
       content:
-        "I am truly impressed by the quality of training offered by Sayapatri in the field of Cyber Security and Ethical Hacking. Their approach is both practical and forward-thinking, perfectly aligning with the demands of today’s digital world. Our students have greatly benefited from their engaging sessions, acquiring valuable skills that will support their academic and professional growth. I highly recommend Sayapatri to any institution looking to empower their learners with future-ready tech education.",
+        "I am truly impressed by the quality of training offered by Sayapatri in the field of Cyber Security and Ethical Hacking. Their approach is both practical and forward-thinking, perfectly aligning with the demands of today's digital world. Our students have greatly benefited from their engaging sessions, acquiring valuable skills that will support their academic and professional growth. I highly recommend Sayapatri to any institution looking to empower their learners with future-ready tech education.",
       // rating: 5,
       image:
         "https://res.cloudinary.com/dfgbiud18/image/upload/v1746192842/WhatsApp_Image_2025-05-01_at_12.24.45_b3f7326c_vlev9z.jpg",
@@ -71,7 +75,7 @@ const TestimonialsSection = () => {
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-12">
-          <h2 className="section-title mx-auto after:left-1/2 after:-translate-x-1/2">
+          <h2 ref={titleRef} className="section-title before-typewriter mx-auto after:left-1/2 after:-translate-x-1/2">
             Client Testimonials
           </h2>
           <p className="max-w-2xl mx-auto text-gray-600 dark:text-gray-300">
