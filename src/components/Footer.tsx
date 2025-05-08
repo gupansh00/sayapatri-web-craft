@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import {
@@ -48,8 +49,9 @@ const Footer = () => {
           viewport={{ once: true }}
         >
           <motion.div variants={itemVariants}>
-            <h3 className="font-bold text-xl mb-4 relative inline-block after:content-[''] after:absolute after:w-12 after:h-1 after:bg-sayapatri-500 after:bottom-0 after:left-0 after:-mb-2">
+            <h3 className="font-bold text-xl mb-4 relative inline-block">
               Sayapatri
+              <span className="absolute -bottom-2 left-0 h-1 w-12 bg-white/70 rounded-full"></span>
             </h3>
             <p className="text-gray-300 mb-4">
               Empowering Nepal through innovative IT solutions and comprehensive
@@ -72,8 +74,9 @@ const Footer = () => {
           </motion.div>
 
           <motion.div variants={itemVariants}>
-            <h3 className="font-bold text-xl mb-4 relative inline-block after:content-[''] after:absolute after:w-12 after:h-1 after:bg-sayapatri-500 after:bottom-0 after:left-0 after:-mb-2">
+            <h3 className="font-bold text-xl mb-4 relative inline-block">
               Quick Links
+              <span className="absolute -bottom-2 left-0 h-1 w-12 bg-white/70 rounded-full"></span>
             </h3>
             <ul className="space-y-2">
               {[
@@ -100,8 +103,9 @@ const Footer = () => {
           </motion.div>
 
           <motion.div variants={itemVariants}>
-            <h3 className="font-bold text-xl mb-4 relative inline-block after:content-[''] after:absolute after:w-12 after:h-1 after:bg-sayapatri-500 after:bottom-0 after:left-0 after:-mb-2">
+            <h3 className="font-bold text-xl mb-4 relative inline-block">
               Services
+              <span className="absolute -bottom-2 left-0 h-1 w-12 bg-white/70 rounded-full"></span>
             </h3>
             <ul className="space-y-2">
               {[

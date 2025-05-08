@@ -98,15 +98,27 @@
     @apply py-16 md:py-24;
   }
 
+  /* New updated section title design */
   .section-title {
-    @apply text-3xl md:text-4xl font-bold mb-6 text-sayapatri-800 dark:text-sayapatri-400 font-heading relative;
+    @apply text-3xl md:text-4xl font-bold mb-8 text-sayapatri-800 dark:text-sayapatri-400 font-heading relative inline-block;
+    position: relative;
+    padding-bottom: 0.5rem;
   }
 
-  .section-title::after {
+  /* New stylish underline effect with gradient and shadow */
+  .section-title::before {
     content: '';
-    @apply absolute bottom-0 left-0 w-16 h-1 bg-sayapatri-500 dark:bg-sayapatri-400;
-    transform: translateY(8px);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 4px;
+    width: 70px;
+    background: linear-gradient(to right, theme('colors.sayapatri.600'), theme('colors.sayapatri.400'));
+    border-radius: 2px;
+    box-shadow: 0 2px 8px rgba(249, 115, 22, 0.4);
   }
+
+  /* Removed the after element that contained the border-bottom */
 
   .service-card {
     @apply p-6 rounded-lg shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-xl dark:bg-gray-800;
