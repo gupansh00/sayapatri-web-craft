@@ -23,6 +23,30 @@ const Footer = () => {
     visible: { y: 0, opacity: 1 },
   };
 
+  // Typewriter animation variants for titles
+  const typewriterVariants = {
+    hidden: { width: 0 },
+    visible: { 
+      width: "100%", 
+      transition: { 
+        duration: 2, 
+        ease: "easeInOut" 
+      } 
+    }
+  };
+
+  // Cursor blink variants
+  const cursorVariants = {
+    blinking: {
+      opacity: [0, 1, 0],
+      transition: {
+        duration: 1,
+        repeat: Infinity,
+        repeatDelay: 0,
+      },
+    },
+  };
+
   const socialIcons = [
     {
       name: "Facebook",
@@ -49,10 +73,23 @@ const Footer = () => {
           viewport={{ once: true }}
         >
           <motion.div variants={itemVariants}>
-            <h3 className="font-bold text-xl mb-4 relative inline-block">
-              Sayapatri
-              <span className="absolute -bottom-2 left-0 h-1 w-12 bg-white/70 rounded-full"></span>
-            </h3>
+            <div className="relative font-bold text-xl mb-4 overflow-hidden">
+              <motion.span
+                variants={typewriterVariants}
+                initial="hidden"
+                animate="visible"
+                className="inline-block whitespace-nowrap overflow-hidden"
+              >
+                Sayapatri
+              </motion.span>
+              <motion.span
+                variants={cursorVariants}
+                animate="blinking"
+                className="absolute right-[-8px] top-0 text-sayapatri-200"
+              >
+                |
+              </motion.span>
+            </div>
             <p className="text-gray-300 mb-4">
               Empowering Nepal through innovative IT solutions and comprehensive
               training programs.
@@ -74,10 +111,23 @@ const Footer = () => {
           </motion.div>
 
           <motion.div variants={itemVariants}>
-            <h3 className="font-bold text-xl mb-4 relative inline-block">
-              Quick Links
-              <span className="absolute -bottom-2 left-0 h-1 w-12 bg-white/70 rounded-full"></span>
-            </h3>
+            <div className="relative font-bold text-xl mb-4 overflow-hidden">
+              <motion.span
+                variants={typewriterVariants}
+                initial="hidden"
+                animate="visible"
+                className="inline-block whitespace-nowrap overflow-hidden"
+              >
+                Quick Links
+              </motion.span>
+              <motion.span
+                variants={cursorVariants}
+                animate="blinking"
+                className="absolute right-[-8px] top-0 text-sayapatri-200"
+              >
+                |
+              </motion.span>
+            </div>
             <ul className="space-y-2">
               {[
                 "About",
@@ -103,10 +153,23 @@ const Footer = () => {
           </motion.div>
 
           <motion.div variants={itemVariants}>
-            <h3 className="font-bold text-xl mb-4 relative inline-block">
-              Services
-              <span className="absolute -bottom-2 left-0 h-1 w-12 bg-white/70 rounded-full"></span>
-            </h3>
+            <div className="relative font-bold text-xl mb-4 overflow-hidden">
+              <motion.span
+                variants={typewriterVariants}
+                initial="hidden"
+                animate="visible"
+                className="inline-block whitespace-nowrap overflow-hidden"
+              >
+                Services
+              </motion.span>
+              <motion.span
+                variants={cursorVariants}
+                animate="blinking"
+                className="absolute right-[-8px] top-0 text-sayapatri-200"
+              >
+                |
+              </motion.span>
+            </div>
             <ul className="space-y-2">
               {[
                 "Web Development",

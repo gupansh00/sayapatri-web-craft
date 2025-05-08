@@ -98,27 +98,36 @@
     @apply py-16 md:py-24;
   }
 
-  /* New updated section title design */
+  /* New typewriter animation for section titles */
   .section-title {
-    @apply text-3xl md:text-4xl font-bold mb-8 text-sayapatri-800 dark:text-sayapatri-400 font-heading relative inline-block;
+    @apply text-3xl md:text-4xl font-bold mb-8 text-sayapatri-800 dark:text-sayapatri-400 font-heading inline-block relative;
+    overflow: hidden;
+    white-space: nowrap;
     position: relative;
-    padding-bottom: 0.5rem;
+    animation: typing 3.5s steps(40, end);
   }
 
-  /* New stylish underline effect with gradient and shadow */
-  .section-title::before {
-    content: '';
+  /* Remove the previous gradient effect and add typewriter cursor */
+  .section-title::after {
+    content: '|';
     position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 4px;
-    width: 70px;
-    background: linear-gradient(to right, theme('colors.sayapatri.600'), theme('colors.sayapatri.400'));
-    border-radius: 2px;
-    box-shadow: 0 2px 8px rgba(249, 115, 22, 0.4);
+    right: -10px;
+    color: theme('colors.sayapatri.500');
+    background-color: transparent;
+    animation: blink 0.75s step-end infinite;
   }
 
-  /* Removed the after element that contained the border-bottom */
+  /* Typing animation keyframes */
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+
+  /* Cursor blink animation */
+  @keyframes blink {
+    from, to { opacity: 0 }
+    50% { opacity: 1 }
+  }
 
   .service-card {
     @apply p-6 rounded-lg shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-xl dark:bg-gray-800;
