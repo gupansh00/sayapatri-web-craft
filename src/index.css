@@ -103,36 +103,38 @@
     display: inline-block;
     width: auto;
     white-space: nowrap;
+    opacity: 0; /* Start with opacity 0 for fade-in effect */
   }
 
-  /* Enhanced typewriter animation for section titles */
-  .animate-typewriter {
+  /* New fade-in-up animation for section titles */
+  .animate-fade-in-up {
     @apply text-3xl md:text-4xl font-bold mb-8 text-sayapatri-800 dark:text-sayapatri-400 font-heading relative;
     display: inline-block;
     width: auto;
     position: relative;
     overflow: visible;
     white-space: nowrap;
-    animation: blink-caret 0.75s step-end infinite;
+    animation: fadeInUp 0.8s ease-out 0.2s forwards;
   }
 
-  /* Cursor style for typewriter effect */
-  .animate-typewriter::after {
-    content: '|';
-    position: absolute;
-    right: -8px;
-    color: theme('colors.sayapatri.500');
-    animation: blink 0.75s step-end infinite;
-    font-weight: 300;
+  /* Fade-in-up animation keyframes */
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
-  /* Enhanced cursor blink animation */
+  /* Clean up legacy animations we don't need anymore */
   @keyframes blink {
     from, to { opacity: 0 }
     50% { opacity: 1 }
   }
 
-  /* Caret blinking animation as backup */
   @keyframes blink-caret {
     from, to { border-color: transparent }
     50% { border-color: theme('colors.sayapatri.500'); }

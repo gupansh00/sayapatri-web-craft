@@ -13,7 +13,7 @@ const ContactSection = () => {
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-12">
-          <h2 ref={titleRef} className="section-title before-typewriter mx-auto after:left-1/2 after:-translate-x-1/2">
+          <h2 ref={titleRef} className="before-typewriter mx-auto after:left-1/2 after:-translate-x-1/2">
             Contact Us
           </h2>
           <p className="max-w-2xl mx-auto text-white">
