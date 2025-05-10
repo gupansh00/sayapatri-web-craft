@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import {
   Carousel,
@@ -10,6 +11,7 @@ import {
 import Autoplay from "embla-carousel-autoplay";
 import { motion, AnimatePresence } from "framer-motion";
 import { EmblaCarouselType } from "embla-carousel";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 
 // Service-related images
 const images = [
@@ -23,11 +25,49 @@ const images = [
 const HeroBackgroundSlider = () => {
   const [api, setApi] = useState<EmblaCarouselType | null>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
 
-  // Auto-advance with 2-second interval, stop on interaction
+  // Auto-advance plugin with pause/resume capability
   const autoplayPlugin = React.useRef(
-    Autoplay({ delay: 2000, stopOnInteraction: true })
+    Autoplay({
+      delay: 2000,
+      stopOnInteraction: true,
+      stopOnMouseEnter: true, // Pause on hover
+      playOnInit: true,
+    })
   );
+
+  // Handle manual navigation
+  const handlePrevious = React.useCallback(() => {
+    if (api && api.canScrollPrev()) {
+      api.scrollPrev();
+      // Reset autoplay timer after manual navigation
+      autoplayPlugin.current.reset();
+    }
+  }, [api]);
+
+  const handleNext = React.useCallback(() => {
+    if (api && api.canScrollNext()) {
+      api.scrollNext();
+      // Reset autoplay timer after manual navigation
+      autoplayPlugin.current.reset();
+    }
+  }, [api]);
+
+  // Toggle pause/play on hover
+  const handleMouseEnter = React.useCallback(() => {
+    setIsPaused(true);
+    if (autoplayPlugin.current.stop) {
+      autoplayPlugin.current.stop();
+    }
+  }, []);
+
+  const handleMouseLeave = React.useCallback(() => {
+    setIsPaused(false);
+    if (autoplayPlugin.current.play) {
+      autoplayPlugin.current.play();
+    }
+  }, []);
 
   useEffect(() => {
     if (!api) return;
@@ -52,11 +92,17 @@ const HeroBackgroundSlider = () => {
   const handleIndicatorClick = (index: number) => {
     if (api && api.canScrollNext()) {
       api.scrollTo(index);
+      // Reset autoplay timer after manual navigation
+      autoplayPlugin.current.reset();
     }
   };
 
   return (
-    <div className="absolute inset-0 -z-10 w-full h-full overflow-hidden">
+    <div
+      className="absolute inset-0 -z-10 w-full h-full overflow-hidden"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
       <Carousel
         opts={{
           loop: true,
@@ -112,7 +158,29 @@ const HeroBackgroundSlider = () => {
             </CarouselItem>
           ))}
         </CarouselContent>
-        Slide indicators
+        
+        {/* Custom Navigation Buttons */}
+        <div className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-20">
+          <button
+            onClick={handlePrevious}
+            className="bg-black/30 hover:bg-black/50 text-white w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
+            aria-label="Previous slide"
+          >
+            <ArrowLeft className="h-5 w-5 md:h-6 md:w-6" />
+          </button>
+        </div>
+        
+        <div className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-20">
+          <button
+            onClick={handleNext}
+            className="bg-black/30 hover:bg-black/50 text-white w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
+            aria-label="Next slide"
+          >
+            <ArrowRight className="h-5 w-5 md:h-6 md:w-6" />
+          </button>
+        </div>
+        
+        {/* Slide indicators */}
         <div className="absolute bottom-12 left-0 right-0 flex justify-center items-center gap-4 z-20 cursor-pointer">
           <div className="flex space-x-3">
             {images.map((_, idx) => (
@@ -122,7 +190,7 @@ const HeroBackgroundSlider = () => {
                   e.stopPropagation();
                   handleIndicatorClick(idx);
                 }}
-                className={`w-3 h-3 rounded-full transition-all duration-500  cursor-pointer
+                className={`w-3 h-3 rounded-full transition-all duration-500 cursor-pointer
                   ${
                     currentIndex === idx
                       ? "bg-white w-6 scale-110"
@@ -140,14 +208,6 @@ const HeroBackgroundSlider = () => {
             ))}
           </div>
         </div>
-        {/* <CarouselPrevious
-          className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white border-none z-20 transition-transform duration-300 hover:scale-110 "
-          aria-label="Previous slide "
-        />
-        <CarouselNext
-          className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white border-none z-20 transition-transform duration-300 hover:scale-110"
-          aria-label="Next slide"
-        /> */}
       </Carousel>
     </div>
   );
