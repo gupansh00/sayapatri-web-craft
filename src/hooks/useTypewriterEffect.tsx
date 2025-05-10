@@ -16,6 +16,7 @@ export const useTypewriterEffect = <T extends HTMLElement = HTMLHeadingElement>(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
+            // Add the animation class without modifying the existing content
             entry.target.classList.add("animate-typewriter");
             observer.unobserve(entry.target);
           }

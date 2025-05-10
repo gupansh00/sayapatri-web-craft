@@ -1,34 +1,10 @@
 
-import { useEffect, useRef } from "react";
 import ContactForm from "./contact/ContactForm";
 import ContactInfo from "./contact/ContactInfo";
+import useTypewriterEffect from "@/hooks/useTypewriterEffect";
 
 const ContactSection = () => {
-  const titleRef = useRef<HTMLHeadingElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("animate-typewriter");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    if (titleRef.current) {
-      observer.observe(titleRef.current);
-    }
-
-    return () => {
-      if (titleRef.current) {
-        observer.unobserve(titleRef.current);
-      }
-    };
-  }, []);
+  const titleRef = useTypewriterEffect();
 
   return (
     <section
