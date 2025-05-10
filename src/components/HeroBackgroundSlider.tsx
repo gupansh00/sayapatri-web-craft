@@ -1,11 +1,8 @@
-
 import React, { useState, useEffect } from "react";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
 } from "@/components/ui/carousel";
 
 import Autoplay from "embla-carousel-autoplay";
@@ -36,28 +33,6 @@ const HeroBackgroundSlider = () => {
       playOnInit: true,
     })
   );
-
-  // Handle manual navigation with previous button
-  const handlePrevious = React.useCallback(() => {
-    if (api) {
-      api.scrollPrev();
-      // Reset autoplay timer after manual navigation
-      if (autoplayPlugin.current && autoplayPlugin.current.reset) {
-        autoplayPlugin.current.reset();
-      }
-    }
-  }, [api]);
-
-  // Handle manual navigation with next button
-  const handleNext = React.useCallback(() => {
-    if (api) {
-      api.scrollNext();
-      // Reset autoplay timer after manual navigation
-      if (autoplayPlugin.current && autoplayPlugin.current.reset) {
-        autoplayPlugin.current.reset();
-      }
-    }
-  }, [api]);
 
   // Toggle pause/play on hover
   const handleMouseEnter = React.useCallback(() => {
@@ -92,6 +67,28 @@ const HeroBackgroundSlider = () => {
       api.off("select", onSelect);
       api.off("reInit", onSelect);
     };
+  }, [api]);
+
+  useEffect(() => {
+    console.log("Carousel API initialized:", api);
+  }, [api]);
+
+  const handlePrevious = React.useCallback(() => {
+    console.log("Previous button clicked");
+    if (api) {
+      api.scrollPrev();
+    } else {
+      console.error("Carousel API is not initialized");
+    }
+  }, [api]);
+
+  const handleNext = React.useCallback(() => {
+    console.log("Next button clicked");
+    if (api) {
+      api.scrollNext();
+    } else {
+      console.error("Carousel API is not initialized");
+    }
   }, [api]);
 
   // Handle indicator dots click
@@ -172,7 +169,7 @@ const HeroBackgroundSlider = () => {
             </CarouselItem>
           ))}
         </CarouselContent>
-        
+
         {/* Custom Navigation Buttons - Ensure these are properly visible and clickable */}
         <div className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-20">
           <button
@@ -183,7 +180,7 @@ const HeroBackgroundSlider = () => {
             <ArrowLeft className="h-5 w-5 md:h-6 md:w-6" />
           </button>
         </div>
-        
+
         <div className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-20">
           <button
             onClick={handleNext}
@@ -193,7 +190,7 @@ const HeroBackgroundSlider = () => {
             <ArrowRight className="h-5 w-5 md:h-6 md:w-6" />
           </button>
         </div>
-        
+
         {/* Slide indicators */}
         <div className="absolute bottom-12 left-0 right-0 flex justify-center items-center gap-4 z-20 cursor-pointer">
           <div className="flex space-x-3">

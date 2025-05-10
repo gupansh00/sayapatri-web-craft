@@ -48,7 +48,7 @@ const Footer = () => {
           viewport={{ once: true }}
         >
           <motion.div variants={itemVariants}>
-            <div className="section-title mb-4">
+            <div className="section-title mb-4 dark:text-sayapatri-500">
               Sayapatri
             </div>
             <p className="text-gray-300 mb-4">
@@ -72,7 +72,7 @@ const Footer = () => {
           </motion.div>
 
           <motion.div variants={itemVariants}>
-            <div className="section-title mb-4">
+            <div className="section-title mb-4 dark:text-sayapatri-500">
               Quick Links
             </div>
             <ul className="space-y-2">
@@ -100,7 +100,7 @@ const Footer = () => {
           </motion.div>
 
           <motion.div variants={itemVariants}>
-            <div className="section-title mb-4">
+            <div className="section-title mb-4 dark:text-sayapatri-500">
               Services
             </div>
             <ul className="space-y-2">
