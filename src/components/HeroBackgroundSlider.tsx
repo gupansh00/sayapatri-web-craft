@@ -27,44 +27,49 @@ const HeroBackgroundSlider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
 
-  // Auto-advance plugin with pause/resume capability
+  // Create the autoplay plugin instance with proper configuration
   const autoplayPlugin = React.useRef(
     Autoplay({
       delay: 2000,
       stopOnInteraction: true,
-      stopOnMouseEnter: true, // Pause on hover
+      stopOnMouseEnter: true,
       playOnInit: true,
     })
   );
 
-  // Handle manual navigation
+  // Handle manual navigation with previous button
   const handlePrevious = React.useCallback(() => {
-    if (api && api.canScrollPrev()) {
+    if (api) {
       api.scrollPrev();
       // Reset autoplay timer after manual navigation
-      autoplayPlugin.current.reset();
+      if (autoplayPlugin.current && autoplayPlugin.current.reset) {
+        autoplayPlugin.current.reset();
+      }
     }
   }, [api]);
 
+  // Handle manual navigation with next button
   const handleNext = React.useCallback(() => {
-    if (api && api.canScrollNext()) {
+    if (api) {
       api.scrollNext();
       // Reset autoplay timer after manual navigation
-      autoplayPlugin.current.reset();
+      if (autoplayPlugin.current && autoplayPlugin.current.reset) {
+        autoplayPlugin.current.reset();
+      }
     }
   }, [api]);
 
   // Toggle pause/play on hover
   const handleMouseEnter = React.useCallback(() => {
     setIsPaused(true);
-    if (autoplayPlugin.current.stop) {
+    if (autoplayPlugin.current && autoplayPlugin.current.stop) {
       autoplayPlugin.current.stop();
     }
   }, []);
 
   const handleMouseLeave = React.useCallback(() => {
     setIsPaused(false);
-    if (autoplayPlugin.current.play) {
+    if (autoplayPlugin.current && autoplayPlugin.current.play) {
       autoplayPlugin.current.play();
     }
   }, []);
@@ -89,13 +94,22 @@ const HeroBackgroundSlider = () => {
     };
   }, [api]);
 
+  // Handle indicator dots click
   const handleIndicatorClick = (index: number) => {
-    if (api && api.canScrollNext()) {
+    if (api) {
       api.scrollTo(index);
       // Reset autoplay timer after manual navigation
-      autoplayPlugin.current.reset();
+      if (autoplayPlugin.current && autoplayPlugin.current.reset) {
+        autoplayPlugin.current.reset();
+      }
     }
   };
+
+  // Log the state of the carousel for debugging
+  useEffect(() => {
+    console.log("Current index:", currentIndex);
+    console.log("Is paused:", isPaused);
+  }, [currentIndex, isPaused]);
 
   return (
     <div
@@ -113,7 +127,7 @@ const HeroBackgroundSlider = () => {
         setApi={setApi}
         className="w-full h-full"
       >
-        <CarouselContent className="h-full ">
+        <CarouselContent className="h-full">
           {images.map((image, index) => (
             <CarouselItem key={index} className="h-full w-full">
               <AnimatePresence mode="wait">
@@ -159,7 +173,7 @@ const HeroBackgroundSlider = () => {
           ))}
         </CarouselContent>
         
-        {/* Custom Navigation Buttons */}
+        {/* Custom Navigation Buttons - Ensure these are properly visible and clickable */}
         <div className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-20">
           <button
             onClick={handlePrevious}
