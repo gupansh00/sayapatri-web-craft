@@ -16,7 +16,7 @@ interface ContactItemProps {
 const ContactItem = ({ icon, title, details }: ContactItemProps) => {
   return (
     <div className="flex gap-4">
-      <div className="flex-shrink-0 flex items-center justify-center w-12 h-12 rounded-full bg-sayapatri-100">
+      <div className="flex-shrink-0 flex items-center justify-center w-12 h-12 rounded-full bg-sayapatri-100 hover:bg-sayapatri-200 transition-all duration-300 hover:scale-110 hover:rotate-6 cursor-pointer">
         {icon}
       </div>
       <div>
@@ -24,7 +24,7 @@ const ContactItem = ({ icon, title, details }: ContactItemProps) => {
         {details.map((detail, i) => (
           <p key={i} className="text-gray-600">
             {detail.href ? (
-              <a href={detail.href} className="text-sayapatri-600 hover:underline">
+              <a href={detail.href} className="text-sayapatri-600 hover:underline transition-colors duration-300 hover:text-sayapatri-700">
                 {detail.label}
               </a>
             ) : (
@@ -42,7 +42,7 @@ const ContactItem = ({ icon, title, details }: ContactItemProps) => {
 const ContactInfo = () => {
   const contactItems: ContactItemProps[] = [
     {
-      icon: <Phone className="h-6 w-6 text-sayapatri-600 mx-auto" />,
+      icon: <Phone className="h-6 w-6 text-sayapatri-600 mx-auto transition-all duration-300 hover:scale-125" />,
       title: "Phone",
       details: [
         {
@@ -56,7 +56,7 @@ const ContactInfo = () => {
       ],
     },
     {
-      icon: <Mail className="h-6 w-6 text-sayapatri-600 mx-auto" />,
+      icon: <Mail className="h-6 w-6 text-sayapatri-600 mx-auto transition-all duration-300 hover:scale-125" />,
       title: "Email",
       details: [
         {
@@ -66,7 +66,7 @@ const ContactInfo = () => {
       ],
     },
     {
-      icon: <MapPin className="h-6 w-6 text-sayapatri-600 mx-auto" />,
+      icon: <MapPin className="h-6 w-6 text-sayapatri-600 mx-auto transition-all duration-300 hover:scale-125" />,
       title: "Address",
       details: [
         { label: "Tinpaini, Biratnagar" },

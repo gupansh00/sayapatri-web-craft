@@ -16,7 +16,7 @@ const ContactSection = () => {
           <h2 ref={titleRef} className="before-typewriter mx-auto after:left-1/2 after:-translate-x-1/2">
             Contact Us
           </h2>
-          <p className="max-w-2xl mx-auto text-white">
+          <p className="max-w-2xl mx-auto text-gray-600 dark:text-gray-300">
             Have questions or want to discuss a project? Get in touch with our
             team today.
           </p>

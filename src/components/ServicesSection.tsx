@@ -8,32 +8,32 @@ const ServicesSection = () => {
   
   const services = [
     {
-      icon: <Code className="h-12 w-12 text-sayapatri-500 mb-4" />,
+      icon: <Code className="h-12 w-12 text-sayapatri-500 mb-4 transition-all duration-300 hover:scale-125 hover:text-sayapatri-600" />,
       title: "Web Development",
       description: "Custom websites, web applications, and e-commerce solutions tailored to your business needs."
     },
     {
-      icon: <Smartphone className="h-12 w-12 text-sayapatri-500 mb-4" />,
+      icon: <Smartphone className="h-12 w-12 text-sayapatri-500 mb-4 transition-all duration-300 hover:scale-125 hover:text-sayapatri-600" />,
       title: "App Development",
       description: "Native and cross-platform mobile applications for iOS and Android with intuitive user interfaces."
     },
     {
-      icon: <Pencil className="h-12 w-12 text-sayapatri-500 mb-4" />,
+      icon: <Pencil className="h-12 w-12 text-sayapatri-500 mb-4 transition-all duration-300 hover:scale-125 hover:text-sayapatri-600" />,
       title: "Graphic Design",
       description: "Eye-catching visual content creation including logos, branding materials, and marketing collateral."
     },
     {
-      icon: <Video className="h-12 w-12 text-sayapatri-500 mb-4" />,
+      icon: <Video className="h-12 w-12 text-sayapatri-500 mb-4 transition-all duration-300 hover:scale-125 hover:text-sayapatri-600" />,
       title: "Video Editing",
       description: "Professional video production and editing services for promotional content and social media."
     },
     {
-      icon: <Palette className="h-12 w-12 text-sayapatri-500 mb-4" />,
+      icon: <Palette className="h-12 w-12 text-sayapatri-500 mb-4 transition-all duration-300 hover:scale-125 hover:text-sayapatri-600" />,
       title: "UI/UX Design",
       description: "User-centered design solutions that enhance user experience and drive engagement."
     },
     {
-      icon: <Book className="h-12 w-12 text-sayapatri-500 mb-4" />,
+      icon: <Book className="h-12 w-12 text-sayapatri-500 mb-4 transition-all duration-300 hover:scale-125 hover:text-sayapatri-600" />,
       title: "Training Programs",
       description: "Comprehensive IT training for schools, colleges, and professionals to build technical skills."
     }
@@ -83,7 +83,7 @@ const ServicesSection = () => {
               variants={itemVariants}
             >
               <div className="mx-auto flex justify-center">
-                <div className="p-4 rounded-full bg-sayapatri-50 dark:bg-gray-600 shadow-inner mb-2">
+                <div className="p-4 rounded-full bg-sayapatri-50 dark:bg-gray-600 shadow-inner mb-2 transition-transform duration-300 hover:rotate-12">
                   {service.icon}
                 </div>
               </div>

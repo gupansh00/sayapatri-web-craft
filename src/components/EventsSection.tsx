@@ -58,8 +58,8 @@ const EventsSection = () => {
             <Card key={index} className="border-0 shadow-lg dark:bg-gray-800">
               <CardContent className="p-6">
                 <div className="flex flex-col md:flex-row gap-4">
-                  <div className="flex-shrink-0 flex items-center justify-center w-16 h-16 rounded-full bg-sayapatri-100 dark:bg-gray-700 text-sayapatri-600 dark:text-sayapatri-400">
-                    <Calendar className="h-8 w-8" />
+                  <div className="flex-shrink-0 flex items-center justify-center w-16 h-16 rounded-full bg-sayapatri-100 dark:bg-gray-700 text-sayapatri-600 dark:text-sayapatri-400 transition-all duration-300 hover:scale-110 hover:rotate-12 hover:bg-sayapatri-200 dark:hover:bg-gray-600">
+                    <Calendar className="h-8 w-8 transition-transform duration-300 hover:scale-110" />
                   </div>
                   <div className="flex-grow">
                     <div className="flex flex-wrap justify-between items-start mb-2">
