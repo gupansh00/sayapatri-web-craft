@@ -1,4 +1,3 @@
-
 import {
   Carousel,
   CarouselContent,
@@ -12,7 +11,7 @@ import useTypewriterEffect from "@/hooks/useTypewriterEffect";
 
 const TestimonialsSection = () => {
   const titleRef = useTypewriterEffect();
-  
+
   const testimonials = [
     {
       name: "Shiva Adhikari",
@@ -53,8 +52,9 @@ const TestimonialsSection = () => {
       content:
         "Sayapatri provided outstanding Cyber Security and Ethical Hacking training, equipping our students with essential skills and expert insights. Their practical, engaging methods make complex topics accessible, ensuring readiness for real-world scenarios. Through customized courses and dedicated trainers, Sayapatri offers the best learning journey, driving success and innovation in tech education. Choose Sayapatri to lead the way in future-ready tech training.",
       // rating: 5,
-      image: "/placeholder.svg",
-      // link: "https://www.facebook.com/hamroschoolnvm",
+      image:
+        "https://res.cloudinary.com/dfgbiud18/image/upload/v1746901723/sunilsir_sl47rw.jpg",
+      link: "https://www.facebook.com/profile.php?id=100087470774146",
     },
     {
       name: "Pradip Baral",
@@ -75,7 +75,10 @@ const TestimonialsSection = () => {
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-12">
-          <h2 ref={titleRef} className="section-title before-typewriter mx-auto after:left-1/2 after:-translate-x-1/2">
+          <h2
+            ref={titleRef}
+            className="section-title before-typewriter mx-auto after:left-1/2 after:-translate-x-1/2"
+          >
             Client Testimonials
           </h2>
           <p className="max-w-2xl mx-auto text-gray-600 dark:text-gray-300">

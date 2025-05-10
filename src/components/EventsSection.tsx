@@ -1,4 +1,3 @@
-
 import { Calendar } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -6,23 +5,29 @@ import useTypewriterEffect from "@/hooks/useTypewriterEffect";
 
 const EventsSection = () => {
   const titleRef = useTypewriterEffect();
-  
+  const handleRegisterClick = () => {
+    window.open(
+      "https://docs.google.com/forms/d/e/1FAIpQLScuIVr7I0TcwjVqoPv2FU7WN-zE4wqwABIIEGm5sn1ruxGz9Q/viewform?usp=header",
+      "_blank"
+    );
+  };
+
   const events = [
     {
-      title: "Web Development Workshop",
-      date: "July, 2025",
-      location: "Namuna Vidya Mandir,Biratnagar",
+      title: "Fundamentals of HTML and CSS",
+      date: "10th Jesth, 2082",
+      location: "Online (Google Meet)",
       description:
-        "Learn the fundamentals of modern web development with HTML, CSS, and JavaScript.",
+        "Learn the fundamentals of modern web development with HTML,and CSS and be capable of creating beautiful and responsive websites.",
       registration: "Open",
     },
     {
       title: "Cyber Security and Ethical Hacking Bootcamp",
-      date: "Coming Soon...",
-      location: "Online (Zoom)",
+      // date: "Coming Soon...",
+      // location: "Online (Zoom)",
       description:
         "Boost your tech skills with cybersecurity training.Fast, expert-led, and student-focused.",
-      registration: "Open",
+      registration: "Coming Soon",
     },
     // {
     //   title: "Mobile App Development Bootcamp",
@@ -41,10 +46,16 @@ const EventsSection = () => {
   ];
 
   return (
-    <section id="events" className="section-padding bg-gray-50 dark:bg-gray-900">
+    <section
+      id="events"
+      className="section-padding bg-gray-50 dark:bg-gray-900"
+    >
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-12">
-          <h2 ref={titleRef} className="section-title before-typewriter mx-auto after:left-1/2 after:-translate-x-1/2">
+          <h2
+            ref={titleRef}
+            className="section-title before-typewriter mx-auto after:left-1/2 after:-translate-x-1/2"
+          >
             Upcoming Events
           </h2>
           <p className="max-w-2xl mx-auto text-gray-600 dark:text-gray-300">
@@ -63,7 +74,9 @@ const EventsSection = () => {
                   </div>
                   <div className="flex-grow">
                     <div className="flex flex-wrap justify-between items-start mb-2">
-                      <h3 className="text-xl font-bold dark:text-white">{event.title}</h3>
+                      <h3 className="text-xl font-bold dark:text-white">
+                        {event.title}
+                      </h3>
                       <span
                         className={`text-sm px-2 py-1 rounded ${
                           event.registration === "Open"
@@ -78,10 +91,16 @@ const EventsSection = () => {
                       <p className="text-sayapatri-600 dark:text-sayapatri-400 font-medium">
                         {event.date}
                       </p>
-                      <p className="text-gray-600 dark:text-gray-300">{event.location}</p>
+                      <p className="text-gray-600 dark:text-gray-300">
+                        {event.location}
+                      </p>
                     </div>
-                    <p className="text-gray-600 dark:text-gray-300 mb-4">{event.description}</p>
+                    <p className="text-gray-600 dark:text-gray-300 mb-4">
+                      {event.description}
+                    </p>
+
                     <Button
+                      onClick={handleRegisterClick}
                       className="bg-sayapatri-600 hover:bg-sayapatri-700 dark:bg-sayapatri-500 dark:hover:bg-sayapatri-600"
                       disabled={event.registration !== "Open"}
                     >
