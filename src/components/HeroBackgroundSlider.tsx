@@ -27,7 +27,7 @@ const HeroBackgroundSlider = () => {
   // Create the autoplay plugin instance with proper configuration
   const autoplayPlugin = React.useRef(
     Autoplay({
-      delay: 2000,
+      delay: 2500,
       stopOnInteraction: true,
       stopOnMouseEnter: true,
       playOnInit: true,
@@ -170,7 +170,7 @@ const HeroBackgroundSlider = () => {
           ))}
         </CarouselContent>
 
-        {/* Custom Navigation Buttons - Ensure these are properly visible and clickable */}
+        {/* Custom Navigation Buttons - Ensure these are properly visible and clickable
         <div className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-20">
           <button
             onClick={handlePrevious}
@@ -189,7 +189,7 @@ const HeroBackgroundSlider = () => {
           >
             <ArrowRight className="h-5 w-5 md:h-6 md:w-6" />
           </button>
-        </div>
+        </div> */}
 
         {/* Slide indicators */}
         <div className="absolute bottom-12 left-0 right-0 flex justify-center items-center gap-4 z-20 cursor-pointer">
