@@ -6,10 +6,7 @@ import useTypewriterEffect from "@/hooks/useTypewriterEffect";
 const EventsSection = () => {
   const titleRef = useTypewriterEffect();
   const handleRegisterClick = () => {
-    window.open(
-      "https://docs.google.com/forms/d/e/1FAIpQLScuIVr7I0TcwjVqoPv2FU7WN-zE4wqwABIIEGm5sn1ruxGz9Q/viewform?usp=header",
-      "_blank"
-    );
+    window.open("https://forms.gle/KUwvx4FNtfD1So8W9", "_blank");
   };
 
   const events = [
